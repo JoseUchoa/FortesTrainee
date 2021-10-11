@@ -7,5 +7,10 @@
     <Transaction>2021/10/08 21:21:16.000.093,H:\Projetos\Project2.dproj=H:\Projetos\Project2.dproj</Transaction>
     <Transaction>2021/10/08 23:09:36.000.046,H:\Projetos\Project2.dproj=C:\Users\joseg\Documents\GitHub\Fortes\Projetos\Definir Parcelas\Project2.dproj</Transaction>
     <Transaction>2021/10/08 23:10:13.000.615,C:\Users\joseg\Documents\GitHub\Fortes\Projetos\Definir Parcelas\Project2.dproj=C:\Users\joseg\Documents\GitHub\Fortes\Projetos\Definir Parcelas\DefineParcelas.dproj</Transaction>
-  </Transactions>
+    <Transaction>2021/10/11 10:55:03.063,C:\Users\joseg\Documents\GitHub\Fortes\Projetos\Definir Parcelas\Parcelas.dfm=H:\Projetos\Parcelas.dfm</Transaction>
+    <Transaction>2021/10/11 10:55:03.063,C:\Users\joseg\Documents\GitHub\Fortes\Projetos\Definir Parcelas\Parcelas.pas=H:\Projetos\Parcelas.pas</Transaction>
+  </Transactions>  <ProjectSortOrder AutoSort="0" SortType="0">
+    <File Path="Parcelas.pas"/>
+    <File Path="Parcelas.dfm"/>
+  </ProjectSortOrder>
 </BorlandProject>

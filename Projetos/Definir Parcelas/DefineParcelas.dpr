@@ -2,7 +2,7 @@ program DefineParcelas;
 
 uses
   Vcl.Forms,
-  Parcelas in 'H:\Projetos\Parcelas.pas' {Form2};
+  Parcelas in 'Parcelas.pas' {Form2};
 
 {$R *.res}
 
