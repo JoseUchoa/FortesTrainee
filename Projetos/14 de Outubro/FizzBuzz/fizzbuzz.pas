@@ -11,6 +11,7 @@ type
     Edit1: TEdit;
     Button1: TButton;
     Memo1: TMemo;
+    StaticText1: TStaticText;
     procedure Button1Click(Sender: TObject);
   private
     { Private declarations }
@@ -42,7 +43,7 @@ begin
         Memo1.Lines.Add(IntToStr(I) + ' - BUZZ')
     end
   else
-    ShowMessage('Digite um valor válido.');
+        Memo1.Lines.Add('Digite um valor válido')
 
 end;
 

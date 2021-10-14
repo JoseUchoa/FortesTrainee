@@ -39,4 +39,12 @@ object Form1: TForm1
     ScrollBars = ssVertical
     TabOrder = 2
   end
+  object StaticText1: TStaticText
+    Left = 8
+    Top = 41
+    Width = 81
+    Height = 17
+    Caption = 'Digite um inteiro'
+    TabOrder = 3
+  end
 end
