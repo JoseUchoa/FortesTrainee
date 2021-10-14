@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2021/10/08 21:13:53.000.576,=H:\Projetos\Unit2.pas</Transaction>
+    <Transaction>2021/10/08 21:20:59.000.958,H:\Projetos\Unit2.dfm=H:\Projetos\Parcelas.dfm</Transaction>
+    <Transaction>2021/10/08 21:20:59.000.958,H:\Projetos\Unit2.pas=H:\Projetos\Parcelas.pas</Transaction>
+    <Transaction>2021/10/08 21:21:16.000.093,H:\Projetos\Project2.dproj=H:\Projetos\Project2.dproj</Transaction>
+    <Transaction>2021/10/08 23:09:36.000.046,C:\Users\joseg\Documents\GitHub\Fortes\Projetos\Definir Parcelas\Project2.dproj=H:\Projetos\Project2.dproj</Transaction>
+    <Transaction>2021/10/08 23:10:13.000.615,C:\Users\joseg\Documents\GitHub\Fortes\Projetos\Definir Parcelas\DefineParcelas.dproj=C:\Users\joseg\Documents\GitHub\Fortes\Projetos\Definir Parcelas\Project2.dproj</Transaction>
+    <Transaction>2021/10/11 10:55:03.000.063,H:\Projetos\Parcelas.pas=C:\Users\joseg\Documents\GitHub\Fortes\Projetos\Definir Parcelas\Parcelas.pas</Transaction>
+    <Transaction>2021/10/11 10:55:03.000.063,H:\Projetos\Parcelas.dfm=C:\Users\joseg\Documents\GitHub\Fortes\Projetos\Definir Parcelas\Parcelas.dfm</Transaction>
+  </Transactions>
+	<ProjectSortOrder AutoSort="0" SortType="0">
+    <File Path="Parcelas.pas"/>
+    <File Path="Parcelas.dfm"/>
+  </ProjectSortOrder>
+</BorlandProject>

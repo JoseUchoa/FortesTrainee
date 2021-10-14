@@ -1,0 +1,48 @@
+unit Triangulo;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls;
+
+type
+  TForm2 = class(TForm)
+    Edit1: TEdit;
+    Edit2: TEdit;
+    Edit3: TEdit;
+    Button1: TButton;
+    procedure Button1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form2: TForm2;
+
+implementation
+
+{$R *.dfm}
+
+function validaTriangulo(var A, B, C: Integer) : Byte;
+begin
+  if A+B <= C or A+C <= B or B+C <= A then
+    Result := 0;
+
+end;
+
+procedure TForm2.Button1Click(Sender: TObject);
+var ladoA, ladoB, ladoC: Integer;
+
+begin
+  ladoA := StrToInt(Edit1.Text);
+  ladoA := StrToInt(Edit2.Text);
+  ladoC := StrToInt(Edit3.Text);
+  if validaTriangulo(ladoA,ladoB,ladoC) = 0 then
+    showMessage('Triangulo Inválido');
+
+end;
+
+end.
