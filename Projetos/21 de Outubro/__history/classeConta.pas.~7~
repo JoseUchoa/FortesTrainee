@@ -1,0 +1,70 @@
+unit classeConta;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls;
+
+type
+  TForm1 = class(TForm)
+    Button1: TButton;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+  Conta = class
+    private
+      FSaldo: Currency;
+    public
+      function Saque(var Valor: Currency): Currency; virtual;
+      function Deposito: Bool;
+      function Consulta: Currency;
+
+  end;
+
+  ContaCorrente = class(Conta)
+
+    public
+      function Saque: Currency; override;
+  end;
+
+  ContaPoupanca= class(Conta)
+
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+{ Conta }
+
+
+function Conta.Saque(var Valor: Currency): Currency;
+begin
+
+end;
+
+function Conta.Deposito: Bool;
+begin
+end;
+
+
+function Conta.Consulta: Currency;
+begin
+end;
+
+
+{ ContaCorrente }
+
+function ContaCorrente.Saque: Currency;
+begin
+
+end;
+
+end.
