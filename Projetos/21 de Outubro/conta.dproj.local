@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BorlandProject>
-  <Transactions>
-    <Transaction>2021/10/21 18:07:11.405,=C:\Users\joseg\Documents\GitHub\Fortes\Projetos\Unit1.pas</Transaction>
-    <Transaction>2021/10/21 18:15:56.923,C:\Users\joseg\Documents\GitHub\Fortes\Projetos\21 de Outubro\classeConta.pas=C:\Users\joseg\Documents\GitHub\Fortes\Projetos\Unit1.pas</Transaction>
-    <Transaction>2021/10/21 18:15:56.923,C:\Users\joseg\Documents\GitHub\Fortes\Projetos\21 de Outubro\classeConta.dfm=C:\Users\joseg\Documents\GitHub\Fortes\Projetos\Unit1.dfm</Transaction>
-    <Transaction>2021/10/21 18:26:49.483,C:\Users\joseg\Documents\GitHub\Fortes\Projetos\21 de Outubro\conta.dproj=C:\Users\joseg\Documents\GitHub\Fortes\Projetos\Project1.dproj</Transaction>
+	<Transactions>
+    <Transaction>2021/10/21 18:07:11.000.405,=C:\Users\joseg\Documents\GitHub\Fortes\Projetos\Unit1.pas</Transaction>
+    <Transaction>2021/10/21 18:15:56.000.923,C:\Users\joseg\Documents\GitHub\Fortes\Projetos\Unit1.pas=C:\Users\joseg\Documents\GitHub\Fortes\Projetos\21 de Outubro\classeConta.pas</Transaction>
+    <Transaction>2021/10/21 18:15:56.000.923,C:\Users\joseg\Documents\GitHub\Fortes\Projetos\Unit1.dfm=C:\Users\joseg\Documents\GitHub\Fortes\Projetos\21 de Outubro\classeConta.dfm</Transaction>
+    <Transaction>2021/10/21 18:26:49.000.483,C:\Users\joseg\Documents\GitHub\Fortes\Projetos\Project1.dproj=C:\Users\joseg\Documents\GitHub\Fortes\Projetos\21 de Outubro\conta.dproj</Transaction>
   </Transactions>
 </BorlandProject>
