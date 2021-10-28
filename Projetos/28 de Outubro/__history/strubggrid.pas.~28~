@@ -1,0 +1,89 @@
+unit strubggrid;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Grids;
+
+type
+  TForm1 = class(TForm)
+    Edit1: TEdit;
+    Edit3: TEdit;
+    Edit2: TEdit;
+    StaticText1: TStaticText;
+    StaticText2: TStaticText;
+    StaticText3: TStaticText;
+    StringGrid1: TStringGrid;
+    Button1: TButton;
+    StaticText4: TStaticText;
+    StaticText5: TStaticText;
+    Button2: TButton;
+    procedure Button1Click(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm1.Button1Click(Sender: TObject);
+var
+  I,Qnt: Integer;
+  Val,Total: Currency;
+begin
+  I := StringGrid1.RowCount;
+  StringGrid1.RowCount := StringGrid1.RowCount+1;
+
+  Qnt := StrToInt(Edit2.Text);
+  Val := StrToCurr(Edit3.Text);
+  StringGrid1.Cells[0,I] := Edit1.Text;
+  StringGrid1.Cells[1,I] := Edit2.Text;
+  StringGrid1.Cells[2,I] := Edit3.Text;
+  StringGrid1.Cells[3,I] := CurrToStr(Val * Qnt);
+
+  Total := StrToCurr(StaticText5.Caption) + (Val * Qnt);
+  StaticText5.Caption := CurrToStr(Total);
+end;
+
+procedure TForm1.Button2Click(Sender: TObject);
+var
+  I,J: Integer;
+  Total: Currency;
+begin
+  Total := StrToCurr(StaticText5.Caption);
+  for I := 1 to StringGrid1.RowCount do
+  begin
+    if StringGrid1.Cells[0,I] = Edit1.Text then
+    Total := Total - StrToCurr(StringGrid1.Cells[3,I]);
+    begin
+      for J := I+1 to StringGrid1.RowCount do
+      begin
+        StringGrid1.Cells[0,J-1] := StringGrid1.Cells[0,J];
+        StringGrid1.Cells[1,J-1] := StringGrid1.Cells[1,J];
+        StringGrid1.Cells[2,J-1] := StringGrid1.Cells[2,J];
+        StringGrid1.Cells[3,J-1] := StringGrid1.Cells[3,J];
+      end;
+      StringGrid1.RowCount := StringGrid1.RowCount-1;
+    end;
+  end;
+  StaticText5.Caption := CurrToStr(Total);
+end;
+
+procedure TForm1.FormCreate(Sender: TObject);
+begin
+  StringGrid1.Cells[0,0] := 'Nome do Produto';
+  StringGrid1.Cells[1,0] := 'Quantidade';
+  StringGrid1.Cells[2,0] := 'Valor Unitario';
+  StringGrid1.Cells[3,0] := 'Subtotal';
+end;
+
+end.
