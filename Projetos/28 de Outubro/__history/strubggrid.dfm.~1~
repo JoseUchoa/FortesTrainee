@@ -1,0 +1,69 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'Form1'
+  ClientHeight = 353
+  ClientWidth = 505
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object StringGrid1: TStringGrid
+    Left = 8
+    Top = 64
+    Width = 377
+    Height = 281
+    TabOrder = 0
+  end
+  object Edit1: TEdit
+    Left = 8
+    Top = 37
+    Width = 121
+    Height = 21
+    TabOrder = 1
+  end
+  object Edit3: TEdit
+    Left = 262
+    Top = 37
+    Width = 123
+    Height = 21
+    TabOrder = 2
+  end
+  object Edit2: TEdit
+    Left = 135
+    Top = 37
+    Width = 121
+    Height = 21
+    NumbersOnly = True
+    TabOrder = 3
+  end
+  object StaticText1: TStaticText
+    Left = 8
+    Top = 8
+    Width = 87
+    Height = 17
+    Caption = 'Nome do Produto'
+    TabOrder = 4
+  end
+  object StaticText2: TStaticText
+    Left = 135
+    Top = 8
+    Width = 60
+    Height = 17
+    Caption = 'Quantidade'
+    TabOrder = 5
+  end
+  object StaticText3: TStaticText
+    Left = 262
+    Top = 8
+    Width = 68
+    Height = 17
+    Caption = 'Valor Unit'#225'rio'
+    TabOrder = 6
+  end
+end

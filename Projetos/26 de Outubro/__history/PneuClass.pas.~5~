@@ -1,0 +1,36 @@
+unit PneuClass;
+
+interface
+
+type
+  VidaPneu = class
+    private
+      FQuilometragem: Double;
+    public
+    constructor Create(VVidas: Integer; VQuilometragem: Double);
+    property Quilometragem: Double read FQuilometragem write FQuilometragem;
+  end;
+
+  Pneu = class
+    private
+      FId: string;
+      FVidas: Integer;
+      FQuilometros: Double;
+      FVidaPneu: VidaPneu;
+    public
+
+
+
+  end;
+
+implementation
+
+{ VidaPneu }
+
+constructor VidaPneu.Create(VVidas: Integer; VQuilometragem: Double);
+begin
+  FVidas := VVidas;
+  FQuilometragem := VQuilometragem;
+end;
+
+end.

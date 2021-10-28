@@ -1,0 +1,12 @@
+unit Pneu;
+
+interface
+
+type
+  VidaPneu = class
+
+  end;
+
+implementation
+
+end.

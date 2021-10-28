@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2021/10/26 16:39:17.000.998,=C:\Users\joseg\Documents\GitHub\Fortes\Projetos\Unit1.pas</Transaction>
+    <Transaction>2021/10/26 16:39:52.000.602,C:\Users\joseg\Documents\GitHub\Fortes\Projetos\26 de Outubro\Onibus.dfm=C:\Users\joseg\Documents\GitHub\Fortes\Projetos\Unit1.dfm</Transaction>
+    <Transaction>2021/10/26 16:39:52.000.602,C:\Users\joseg\Documents\GitHub\Fortes\Projetos\26 de Outubro\Onibus.pas=C:\Users\joseg\Documents\GitHub\Fortes\Projetos\Unit1.pas</Transaction>
+    <Transaction>2021/10/26 16:40:03.000.785,C:\Users\joseg\Documents\GitHub\Fortes\Projetos\26 de Outubro\AtividadeOnibus.dproj=C:\Users\joseg\Documents\GitHub\Fortes\Projetos\Project1.dproj</Transaction>
+    <Transaction>2021/10/26 17:35:17.000.383,=C:\Users\joseg\Documents\GitHub\Fortes\Projetos\26 de Outubro\Unit1.pas</Transaction>
+    <Transaction>2021/10/26 17:35:24.000.950,C:\Users\joseg\Documents\GitHub\Fortes\Projetos\26 de Outubro\Pneu.pas=C:\Users\joseg\Documents\GitHub\Fortes\Projetos\26 de Outubro\Unit1.pas</Transaction>
+    <Transaction>2021/10/26 17:47:25.000.064,C:\Users\joseg\Documents\GitHub\Fortes\Projetos\26 de Outubro\Pneu.pas=C:\Users\joseg\Documents\GitHub\Fortes\Projetos\26 de Outubro\PneuClass.pas</Transaction>
+  </Transactions>
+</BorlandProject>

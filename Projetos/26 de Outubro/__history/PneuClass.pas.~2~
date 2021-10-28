@@ -1,0 +1,20 @@
+unit PneuClass;
+
+interface
+
+type
+  VidaPneu = class
+    private
+      FQuilometragem: Double;
+    public
+    property Quilometragem: Double read FQuilometragem write FQuilometragem;
+  end;
+
+  Pneu = class
+    private
+
+  end;
+
+implementation
+
+end.

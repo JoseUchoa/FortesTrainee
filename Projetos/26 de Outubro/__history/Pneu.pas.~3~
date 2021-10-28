@@ -1,0 +1,13 @@
+unit Pneu;
+
+interface
+
+type
+  VidaPneu = class
+    private
+      FQuilometragem: Double;
+  end;
+
+implementation
+
+end.
