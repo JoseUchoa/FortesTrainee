@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2021/11/04 17:00:13.000.507,=C:\Users\joseg\Documents\GitHub\Fortes\Projetos\Unit1.pas</Transaction>
+    <Transaction>2021/11/04 17:01:00.000.565,C:\Users\joseg\Documents\GitHub\Fortes\Projetos\4 de Novembro\FormPrincipal.pas=C:\Users\joseg\Documents\GitHub\Fortes\Projetos\Unit1.pas</Transaction>
+    <Transaction>2021/11/04 17:01:00.000.565,C:\Users\joseg\Documents\GitHub\Fortes\Projetos\4 de Novembro\FormPrincipal.dfm=C:\Users\joseg\Documents\GitHub\Fortes\Projetos\Unit1.dfm</Transaction>
+    <Transaction>2021/11/04 17:01:33.000.520,C:\Users\joseg\Documents\GitHub\Fortes\Projetos\4 de Novembro\GerenciaCliente.dproj=C:\Users\joseg\Documents\GitHub\Fortes\Projetos\Project1.dproj</Transaction>
+    <Transaction>2021/11/04 17:35:15.000.999,=C:\Users\joseg\Documents\GitHub\Fortes\Projetos\4 de Novembro\Unit2.pas</Transaction>
+    <Transaction>2021/11/04 17:35:32.000.046,C:\Users\joseg\Documents\GitHub\Fortes\Projetos\4 de Novembro\Unit2.dfm=C:\Users\joseg\Documents\GitHub\Fortes\Projetos\4 de Novembro\Adicionar.dfm</Transaction>
+    <Transaction>2021/11/04 17:35:32.000.046,C:\Users\joseg\Documents\GitHub\Fortes\Projetos\4 de Novembro\Unit2.pas=C:\Users\joseg\Documents\GitHub\Fortes\Projetos\4 de Novembro\Adicionar.pas</Transaction>
+  </Transactions>
+</BorlandProject>
