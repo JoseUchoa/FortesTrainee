@@ -16,6 +16,7 @@ type
     procedure Button1Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure Button2Click(Sender: TObject);
+    procedure Button3Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -28,29 +29,30 @@ var
 implementation
 
 uses
-  Adicionar;
+  Adicionar, Editar;
 
 {$R *.dfm}
 
 procedure TForm1.Button1Click(Sender: TObject);
+var
+  I,J: Integer;
 begin
-//  Total := StrToCurr(StaticText5.Caption);
-//  for I := 1 to StringGrid1.RowCount do
-//  begin
-//    if StringGrid1.Cells[0,I] = Edit1.Text then
-//    begin
-//      Total := Total - StrToCurr(StringGrid1.Cells[3,I]);
-//      for J := I+1 to StringGrid1.RowCount do
-//      begin
-//        StringGrid1.Cells[0,J-1] := StringGrid1.Cells[0,J];
-//        StringGrid1.Cells[1,J-1] := StringGrid1.Cells[1,J];
-//        StringGrid1.Cells[2,J-1] := StringGrid1.Cells[2,J];
-//        StringGrid1.Cells[3,J-1] := StringGrid1.Cells[3,J];
-//      end;
-//      StringGrid1.RowCount := StringGrid1.RowCount-1;
-//    end;
-//  end;
-//  StaticText5.Caption := CurrToStr(Total);
+  for I := 1 to StringGrid1.RowCount do
+    if StringGrid1.Cells[0,I] = Edit1.Text then
+      break;
+
+  if StringGrid1.Cells[0,I] <> Edit1.Text then
+    Exit;
+
+  for J := I+1 to StringGrid1.RowCount do
+  begin
+    StringGrid1.Cells[0,J-1] := StringGrid1.Cells[0,J];
+    StringGrid1.Cells[1,J-1] := StringGrid1.Cells[1,J];
+    StringGrid1.Cells[2,J-1] := StringGrid1.Cells[2,J];
+    StringGrid1.Cells[3,J-1] := StringGrid1.Cells[3,J];
+  end;
+  StringGrid1.RowCount := StringGrid1.RowCount-1;
+
 end;
 
 procedure TForm1.Button2Click(Sender: TObject);
@@ -58,7 +60,7 @@ var
   Pos,ID: Integer;
   Nome,CPF,Tel: string;
 begin
-  Form2 := Form2.Create(Nil);
+  Form2 := TForm2.Create(Nil);
   Form2.ShowModal;
 
   Nome := Form2.Edit1.Text;
@@ -81,6 +83,33 @@ begin
   StringGrid1.Cells[3,Pos] := Tel;
 
   Form2.Free;
+end;
+
+procedure TForm1.Button3Click(Sender: TObject);
+var
+  I: Integer;
+begin
+  for I := 1 to StringGrid1.RowCount do
+    if StringGrid1.Cells[0,I] = Edit1.Text then
+      break;
+
+  if StringGrid1.Cells[0,I] <> Edit1.Text then
+    Exit;
+
+  Form3 := TForm3.Create(Nil);
+  Form3.Edit1.Text := StringGrid1.Cells[1,I];
+  Form3.Edit2.Text := StringGrid1.Cells[2,I];
+  Form3.Edit3.Text := StringGrid1.Cells[3,I];
+  Form3.ShowModal;
+
+  if Form3.Flag = True then
+  begin
+    StringGrid1.Cells[1,I] := Form3.Edit1.Text;
+    StringGrid1.Cells[2,I] := Form3.Edit2.Text;
+    StringGrid1.Cells[3,I] := Form3.Edit3.Text;
+  end;
+
+  Form3.Free;
 end;
 
 procedure TForm1.FormCreate(Sender: TObject);

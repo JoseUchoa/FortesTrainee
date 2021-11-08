@@ -1,33 +1,30 @@
 ﻿[Closed Files]
-File_0=TSourceModule,'C:\Users\joseg\Documents\GitHub\Fortes\Projetos\28 de Outubro\strubggrid.pas',0,1,54,1,62,0,0,,
-File_1=TSourceModule,'C:\Users\joseg\Documents\GitHub\Fortes\Projetos\26 de Outubro\PneuClass.pas',0,1,1,80,23,0,0,,
-File_2=TSourceModule,'C:\Users\joseg\Documents\GitHub\Fortes\Projetos\26 de Outubro\Onibus.pas',0,1,1,1,1,0,0,,
-File_3=TSourceModule,'C:\Users\joseg\Documents\GitHub\Fortes\Projetos\21 de Outubro\classeConta.pas',0,1,106,37,142,0,0,{{99,60}
-File_4=TSourceModule,'c:\program files (x86)\embarcadero\studio\21.0\SOURCE\VCL\Vcl.Forms.pas',0,1,11131,1,11131,0,0,{{1891,4}
-File_5=TSourceModule,'H:\Projetos\Unit1.pas',0,1,1,1,1,0,0,,
-File_6=TSourceModule,'C:\Users\joseg\Documents\GitHub\Fortes\Projetos\14 de Outubro\FizzBuzz\fizzbuzz.pas',0,1,23,49,46,0,0,,
-File_7=TSourceModule,'C:\Users\joseg\Documents\GitHub\Fortes\Projetos\14 de Outubro\FIZZ BUZZ\fizzbuzz.pas',0,1,10,35,33,0,0,,
-File_8=TSourceModule,'C:\Users\joseg\Documents\GitHub\Fortes\Projetos\7 de Outubro\Definir Parcelas\Parcelas.pas',0,1,1,1,1,0,0,,
-File_9=TSourceModule,'C:\Users\joseg\Documents\GitHub\Fortes\Projetos\Receber triangulo\Triangulo.pas',0,1,28,1,29,0,0,,
-File_10=TSourceModule,'C:\Users\joseg\Documents\GitHub\Fortes\Projetos\Definir Parcelas\Parcelas.pas',0,1,28,22,45,0,0,,
+File_0=TSourceModule,'C:\Users\joseg\Documents\GitHub\Fortes\Projetos\4 de Novembro\Editar.pas',0,1,7,18,44,0,0,,
+File_1=TSourceModule,'C:\Users\joseg\Documents\GitHub\Fortes\Projetos\4 de Novembro\Adicionar.pas',0,1,1,30,11,0,0,,
+File_2=TSourceModule,'C:\Users\joseg\Documents\GitHub\Fortes\Projetos\28 de Outubro\strubggrid.pas',0,1,54,1,62,0,0,,
+File_3=TSourceModule,'C:\Users\joseg\Documents\GitHub\Fortes\Projetos\26 de Outubro\PneuClass.pas',0,1,1,80,23,0,0,,
+File_4=TSourceModule,'C:\Users\joseg\Documents\GitHub\Fortes\Projetos\26 de Outubro\Onibus.pas',0,1,1,1,1,0,0,,
+File_5=TSourceModule,'C:\Users\joseg\Documents\GitHub\Fortes\Projetos\21 de Outubro\classeConta.pas',0,1,106,37,142,0,0,{{99,60}
+File_6=TSourceModule,'c:\program files (x86)\embarcadero\studio\21.0\SOURCE\VCL\Vcl.Forms.pas',0,1,11131,1,11131,0,0,{{1891,4}
+File_7=TSourceModule,'H:\Projetos\Unit1.pas',0,1,1,1,1,0,0,,
+File_8=TSourceModule,'C:\Users\joseg\Documents\GitHub\Fortes\Projetos\14 de Outubro\FizzBuzz\fizzbuzz.pas',0,1,23,49,46,0,0,,
+File_9=TSourceModule,'C:\Users\joseg\Documents\GitHub\Fortes\Projetos\14 de Outubro\FIZZ BUZZ\fizzbuzz.pas',0,1,10,35,33,0,0,,
+File_10=TSourceModule,'C:\Users\joseg\Documents\GitHub\Fortes\Projetos\7 de Outubro\Definir Parcelas\Parcelas.pas',0,1,1,1,1,0,0,,
+File_11=TSourceModule,'C:\Users\joseg\Documents\GitHub\Fortes\Projetos\Receber triangulo\Triangulo.pas',0,1,28,1,29,0,0,,
+File_12=TSourceModule,'C:\Users\joseg\Documents\GitHub\Fortes\Projetos\Definir Parcelas\Parcelas.pas',0,1,28,22,45,0,0,,
 
 [Modules]
-Module0=C:\Users\joseg\Documents\GitHub\Fortes\Projetos\4 de Novembro\Adicionar.pas
-Module1=C:\Users\joseg\Documents\GitHub\Fortes\Projetos\4 de Novembro\FormPrincipal.pas
-Count=2
+Module0=C:\Users\joseg\Documents\GitHub\Fortes\Projetos\4 de Novembro\FormPrincipal.pas
+Count=1
 EditWindowCount=1
-
-[C:\Users\joseg\Documents\GitHub\Fortes\Projetos\4 de Novembro\Adicionar.pas]
-ModuleType=TSourceModule
 
 [C:\Users\joseg\Documents\GitHub\Fortes\Projetos\4 de Novembro\FormPrincipal.pas]
 ModuleType=TSourceModule
 
 [EditWindow0]
-ViewCount=2
-CurrentEditView=C:\Users\joseg\Documents\GitHub\Fortes\Projetos\4 de Novembro\Adicionar.pas
+ViewCount=1
+CurrentEditView=C:\Users\joseg\Documents\GitHub\Fortes\Projetos\4 de Novembro\FormPrincipal.pas
 View0=0
-View1=1
 PercentageSizes=1
 Create=1
 Visible=1
@@ -46,13 +43,13 @@ BorlandEditorCodeExplorer=BorlandEditorCodeExplorer@EditWindow0
 TopPanelSize=0
 LeftPanelSize=1895
 LeftPanelClients=PropertyInspector,DockSite3
-LeftPanelData=00000800010100000000850E0000000000000167070000000000000100000000550E000009000000446F636B53697465330100000000D11900001100000050726F7065727479496E73706563746F72FFFFFFFF
+LeftPanelData=0000080001010000000050120000000000000167070000000000000100000000550E000009000000446F636B536974653301000000008D2000001100000050726F7065727479496E73706563746F72FFFFFFFF
 RightPanelSize=1999
 RightPanelClients=DockSite2,DockSite4
-RightPanelData=00000800010100000000850E00000000000001CF0700000000000001000000004412000009000000446F636B53697465320100000000D119000009000000446F636B5369746534FFFFFFFF
-BottomPanelSize=1632
+RightPanelData=00000800010100000000501200000000000001CF0700000000000001000000004412000009000000446F636B536974653201000000008D20000009000000446F636B5369746534FFFFFFFF
+BottomPanelSize=0
 BottomPanelClients=DockSite1,MessageView
-BottomPanelData=0000080001020100000009000000446F636B5369746531B9440000000000000260060000000000000100000000B94400000F0000004D65737361676556696577466F726DFFFFFFFF
+BottomPanelData=0000080001020200000009000000446F636B53697465310F0000004D65737361676556696577466F726D1534000000000000022606000000000000FFFFFFFF
 BottomMiddlePanelSize=0
 BottomMiddlePanelClients=DockSite0,GraphDrawingModel
 BottomMiddelPanelData=0000080001020200000009000000446F636B536974653010000000477261706844726177696E67566965779D1D00000000000002F606000000000000FFFFFFFF
@@ -60,24 +57,13 @@ BottomMiddelPanelData=0000080001020200000009000000446F636B5369746530100000004772
 [View0]
 CustomEditViewType=TEditView
 Module=C:\Users\joseg\Documents\GitHub\Fortes\Projetos\4 de Novembro\FormPrincipal.pas
-CursorX=16
-CursorY=29
-TopLine=49
+CursorX=3
+CursorY=55
+TopLine=27
 LeftCol=1
 Elisions=
 Bookmarks=
-EditViewName=C:\Users\joseg\Documents\GitHub\Fortes\Projetos\4 de Novembro\FormPrincipal.pas
-
-[View1]
-CustomEditViewType=TEditView
-Module=C:\Users\joseg\Documents\GitHub\Fortes\Projetos\4 de Novembro\Adicionar.pas
-CursorX=54
-CursorY=9
-TopLine=1
-LeftCol=1
-Elisions=
-Bookmarks=
-EditViewName=C:\Users\joseg\Documents\GitHub\Fortes\Projetos\4 de Novembro\Adicionar.pas
+EditViewName=Borland.FormDesignerView
 
 [Watches]
 Count=0
@@ -154,18 +140,18 @@ StayOnTop=0
 [MessageView]
 PercentageSizes=1
 Create=1
-Visible=1
+Visible=0
 Docked=1
 State=0
 Left=0
-Top=28
-Width=9896
-Height=1371
+Top=0
+Width=2767
+Height=1420
 MaxLeft=-1
 MaxTop=-1
-ClientWidth=9896
-ClientHeight=1371
-TBDockHeight=1371
+ClientWidth=2767
+ClientHeight=1420
+TBDockHeight=1420
 LRDockWidth=2767
 Dockable=1
 StayOnTop=0
@@ -179,11 +165,11 @@ State=0
 Left=0
 Top=0
 Width=1999
-Height=1687
+Height=3495
 MaxLeft=-1
 MaxTop=-1
 ClientWidth=1999
-ClientHeight=1687
+ClientHeight=3495
 TBDockHeight=7148
 LRDockWidth=1999
 Dockable=1
@@ -198,11 +184,11 @@ State=0
 Left=0
 Top=345
 Width=1895
-Height=2743
+Height=4551
 MaxLeft=-1
 MaxTop=-1
 ClientWidth=1895
-ClientHeight=2743
+ClientHeight=4551
 TBDockHeight=5194
 LRDockWidth=1895
 Dockable=1
@@ -211,8 +197,8 @@ SplitPos=111
 
 [PropInspDesignerSelection]
 ArrangeBy=Name
-SelectedItem=Action,
-ExpandedItems=Constraints=0,StyleElements=0
+SelectedItem=Caption,
+ExpandedItems=Constraints=0,Anchors=0
 
 [frmDesignPreview]
 PercentageSizes=1
@@ -444,8 +430,8 @@ Create=1
 Visible=0
 Docked=1
 State=0
-Left=-239
-Top=-321
+Left=-265
+Top=-347
 Width=1849
 Height=3143
 MaxLeft=-1
@@ -688,11 +674,11 @@ State=0
 Left=0
 Top=432
 Width=1999
-Height=1687
+Height=3495
 MaxLeft=-1
 MaxTop=-1
 ClientWidth=1999
-ClientHeight=1687
+ClientHeight=3495
 TBDockHeight=4150
 LRDockWidth=1999
 Dockable=1
