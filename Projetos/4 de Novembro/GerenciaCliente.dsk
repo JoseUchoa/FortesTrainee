@@ -197,8 +197,8 @@ SplitPos=111
 
 [PropInspDesignerSelection]
 ArrangeBy=Name
-SelectedItem=Caption,
-ExpandedItems=Constraints=0,Anchors=0
+SelectedItem=Action,
+ExpandedItems=Anchors=0,BorderIcons=0
 
 [frmDesignPreview]
 PercentageSizes=1
@@ -430,8 +430,8 @@ Create=1
 Visible=0
 Docked=1
 State=0
-Left=-265
-Top=-347
+Left=-291
+Top=-373
 Width=1849
 Height=3143
 MaxLeft=-1
