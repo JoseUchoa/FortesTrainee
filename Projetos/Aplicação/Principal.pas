@@ -7,7 +7,7 @@ uses
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs;
 
 type
-  TForm1 = class(TForm)
+  TFormPrincipal = class(TForm)
     procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
@@ -16,7 +16,7 @@ type
   end;
 
 var
-  Form1: TForm1;
+  FormPrincipal: TFormPrincipal;
 
 implementation
 
@@ -25,7 +25,7 @@ uses
 
 {$R *.dfm}
 
-procedure TForm1.FormCreate(Sender: TObject);
+procedure TFormPrincipal.FormCreate(Sender: TObject);
 begin
   DM := TDM.Create(Self);
 end;

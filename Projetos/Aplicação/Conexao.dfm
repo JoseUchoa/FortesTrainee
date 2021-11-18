@@ -25,6 +25,7 @@ object DM: TDM
     Top = 96
   end
   object FDPhysFBDriverLink: TFDPhysFBDriverLink
+    VendorLib = 'C:\Program Files\Firebird\Firebird_2_5\WOW64\fbclient.dll'
     Left = 136
     Top = 24
   end

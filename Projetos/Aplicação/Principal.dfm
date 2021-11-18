@@ -1,7 +1,7 @@
-object Form1: TForm1
+object FormPrincipal: TFormPrincipal
   Left = 0
   Top = 0
-  Caption = 'Form1'
+  Caption = 'Principal'
   ClientHeight = 231
   ClientWidth = 505
   Color = clBtnFace
