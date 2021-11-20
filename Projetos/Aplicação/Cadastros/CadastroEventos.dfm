@@ -1,0 +1,177 @@
+object FrmCadEventos: TFrmCadEventos
+  Left = 0
+  Top = 0
+  Caption = 'Eventos'
+  ClientHeight = 262
+  ClientWidth = 508
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  PixelsPerInch = 96
+  TextHeight = 13
+  object PageControl: TPageControl
+    Left = 8
+    Top = 8
+    Width = 489
+    Height = 246
+    ActivePage = Lista
+    TabOrder = 0
+    object Lista: TTabSheet
+      Caption = 'Lista'
+      object DBGrid1: TDBGrid
+        Left = 3
+        Top = 0
+        Width = 365
+        Height = 215
+        DataSource = DataSource
+        TabOrder = 0
+        TitleFont.Charset = DEFAULT_CHARSET
+        TitleFont.Color = clWindowText
+        TitleFont.Height = -11
+        TitleFont.Name = 'Tahoma'
+        TitleFont.Style = []
+      end
+      object Adicionar: TButton
+        Left = 387
+        Top = 56
+        Width = 75
+        Height = 25
+        Caption = 'Adicionar'
+        TabOrder = 1
+        OnClick = AdicionarClick
+      end
+      object Editar: TButton
+        Left = 387
+        Top = 96
+        Width = 75
+        Height = 25
+        Caption = 'Editar'
+        TabOrder = 2
+        OnClick = EditarClick
+      end
+      object Remover: TButton
+        Left = 387
+        Top = 136
+        Width = 75
+        Height = 25
+        Caption = 'Remover'
+        TabOrder = 3
+        OnClick = RemoverClick
+      end
+    end
+    object Registro: TTabSheet
+      Caption = 'Registro'
+      ImageIndex = 1
+      object Label1: TLabel
+        Left = 16
+        Top = 16
+        Width = 41
+        Height = 13
+        Caption = 'CODIGO'
+      end
+      object Label2: TLabel
+        Left = 16
+        Top = 119
+        Width = 24
+        Height = 13
+        Caption = 'TIPO'
+        FocusControl = DBEdit2
+      end
+      object DBText1: TDBText
+        Left = 16
+        Top = 35
+        Width = 65
+        Height = 17
+        DataField = 'CODIGO'
+        DataSource = DataSource
+      end
+      object Label3: TLabel
+        Left = 16
+        Top = 66
+        Width = 59
+        Height = 13
+        Caption = 'DESCRI'#199#195'O'
+        FocusControl = DBEdit2
+      end
+      object DBEdit2: TDBEdit
+        Left = 16
+        Top = 85
+        Width = 185
+        Height = 21
+        DataField = 'DESCRICAO'
+        DataSource = DataSource
+        TabOrder = 0
+      end
+      object Confirmar: TButton
+        Left = 16
+        Top = 190
+        Width = 75
+        Height = 25
+        Caption = 'Confirmar'
+        TabOrder = 1
+        OnClick = ConfirmarClick
+      end
+      object Cancelar: TButton
+        Left = 97
+        Top = 191
+        Width = 75
+        Height = 25
+        Caption = 'Cancelar'
+        TabOrder = 2
+        OnClick = CancelarClick
+      end
+      object DBRadioGroup1: TDBRadioGroup
+        Left = 16
+        Top = 138
+        Width = 185
+        Height = 38
+        Columns = 2
+        DataField = 'TIPO'
+        DataSource = DataSource
+        Items.Strings = (
+          'Acrescimo'
+          'Decrescimo')
+        TabOrder = 3
+        Values.Strings = (
+          '1'
+          '0')
+      end
+    end
+  end
+  object QueryEventos: TFDQuery
+    Connection = DM.Connection
+    SQL.Strings = (
+      'SELECT CODIGO,TIPO,DESCRICAO FROM EVENTOS'
+      '')
+    Left = 304
+    Top = 64
+    object QueryEventosCODIGO: TIntegerField
+      FieldName = 'CODIGO'
+      Origin = 'CODIGO'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      Required = True
+    end
+    object QueryEventosTIPO: TIntegerField
+      FieldName = 'TIPO'
+      Origin = 'TIPO'
+      Required = True
+    end
+    object QueryEventosDESCRICAO: TStringField
+      FieldName = 'DESCRICAO'
+      Origin = 'DESCRICAO'
+      Required = True
+      Size = 100
+    end
+  end
+  object DataSource: TDataSource
+    DataSet = QueryEventos
+    Left = 304
+    Top = 152
+  end
+end

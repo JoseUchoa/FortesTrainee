@@ -1,6 +1,7 @@
 object DM: TDM
   OldCreateOrder = False
   OnCreate = DataModuleCreate
+  OnDestroy = DataModuleDestroy
   Height = 150
   Width = 215
   object Connection: TFDConnection
@@ -24,6 +25,7 @@ object DM: TDM
     Top = 96
   end
   object FDPhysFBDriverLink: TFDPhysFBDriverLink
+    VendorLib = 'C:\Program Files\Firebird\Firebird_2_5\WOW64\fbclient.dll'
     Left = 136
     Top = 24
   end

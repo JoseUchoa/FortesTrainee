@@ -4,21 +4,36 @@ File_1=TSourceModule,'C:\Users\joseg\Documents\GitHub\FortesTrainee\Projetos\Apl
 
 [Modules]
 Module0=C:\Users\joseg\Documents\GitHub\FortesTrainee\Projetos\Aplicação\Principal.pas
-Module1=C:\Users\joseg\Documents\GitHub\FortesTrainee\Projetos\Aplicação\Conexao.pas
-Count=2
+Module1=C:\Users\joseg\Documents\GitHub\FortesTrainee\Projetos\Aplicação\Cadastros\CadastroFuncionarios.pas
+Module2=C:\Users\joseg\Documents\GitHub\FortesTrainee\Projetos\Aplicação\Cadastros\CadastroEventos.pas
+Module3=C:\Users\joseg\Documents\GitHub\FortesTrainee\Projetos\Aplicação\Cadastros\CadastroCargos.pas
+Module4=C:\Users\joseg\Documents\GitHub\FortesTrainee\Projetos\Aplicação\Conexao.pas
+Count=5
 EditWindowCount=1
 
 [C:\Users\joseg\Documents\GitHub\FortesTrainee\Projetos\Aplicação\Principal.pas]
+ModuleType=TSourceModule
+
+[C:\Users\joseg\Documents\GitHub\FortesTrainee\Projetos\Aplicação\Cadastros\CadastroFuncionarios.pas]
+ModuleType=TSourceModule
+
+[C:\Users\joseg\Documents\GitHub\FortesTrainee\Projetos\Aplicação\Cadastros\CadastroEventos.pas]
+ModuleType=TSourceModule
+
+[C:\Users\joseg\Documents\GitHub\FortesTrainee\Projetos\Aplicação\Cadastros\CadastroCargos.pas]
 ModuleType=TSourceModule
 
 [C:\Users\joseg\Documents\GitHub\FortesTrainee\Projetos\Aplicação\Conexao.pas]
 ModuleType=TSourceModule
 
 [EditWindow0]
-ViewCount=2
+ViewCount=5
 CurrentEditView=C:\Users\joseg\Documents\GitHub\FortesTrainee\Projetos\Aplicação\Principal.pas
 View0=0
 View1=1
+View2=2
+View3=3
+View4=4
 PercentageSizes=1
 Create=1
 Visible=1
@@ -42,8 +57,8 @@ RightPanelSize=1999
 RightPanelClients=DockSite2,DockSite4
 RightPanelData=00000800010100000000501200000000000001CF0700000000000001000000004412000009000000446F636B536974653201000000008D20000009000000446F636B5369746534FFFFFFFF
 BottomPanelSize=0
-BottomPanelClients=MessageView,DockSite1
-BottomPanelData=000008000102020000000F0000004D65737361676556696577466F726D09000000446F636B53697465311534000000000000022606000000000000FFFFFFFF
+BottomPanelClients=DockSite1,MessageView
+BottomPanelData=0000080001020200000009000000446F636B53697465310F0000004D65737361676556696577466F726D1534000000000000022606000000000000FFFFFFFF
 BottomMiddlePanelSize=0
 BottomMiddlePanelClients=DockSite0,GraphDrawingModel
 BottomMiddelPanelData=0000080001020200000009000000446F636B536974653010000000477261706844726177696E67566965779D1D00000000000002F606000000000000FFFFFFFF
@@ -51,15 +66,48 @@ BottomMiddelPanelData=0000080001020200000009000000446F636B5369746530100000004772
 [View0]
 CustomEditViewType=TEditView
 Module=C:\Users\joseg\Documents\GitHub\FortesTrainee\Projetos\Aplicação\Principal.pas
-CursorX=26
-CursorY=30
+CursorX=44
+CursorY=73
+TopLine=42
+LeftCol=1
+Elisions=
+Bookmarks=
+EditViewName=C:\Users\joseg\Documents\GitHub\FortesTrainee\Projetos\Aplicação\Principal.pas
+
+[View1]
+CustomEditViewType=TEditView
+Module=C:\Users\joseg\Documents\GitHub\FortesTrainee\Projetos\Aplicação\Cadastros\CadastroCargos.pas
+CursorX=83
+CursorY=29
 TopLine=1
 LeftCol=1
 Elisions=
 Bookmarks=
 EditViewName=Borland.FormDesignerView
 
-[View1]
+[View2]
+CustomEditViewType=TEditView
+Module=C:\Users\joseg\Documents\GitHub\FortesTrainee\Projetos\Aplicação\Cadastros\CadastroEventos.pas
+CursorX=1
+CursorY=1
+TopLine=1
+LeftCol=1
+Elisions=
+Bookmarks=
+EditViewName=Borland.FormDesignerView
+
+[View3]
+CustomEditViewType=TEditView
+Module=C:\Users\joseg\Documents\GitHub\FortesTrainee\Projetos\Aplicação\Cadastros\CadastroFuncionarios.pas
+CursorX=3
+CursorY=10
+TopLine=1
+LeftCol=1
+Elisions=
+Bookmarks=
+EditViewName=C:\Users\joseg\Documents\GitHub\FortesTrainee\Projetos\Aplicação\Cadastros\CadastroFuncionarios.pas
+
+[View4]
 CustomEditViewType=TEditView
 Module=C:\Users\joseg\Documents\GitHub\FortesTrainee\Projetos\Aplicação\Conexao.pas
 CursorX=9
@@ -194,7 +242,7 @@ MaxLeft=-1
 MaxTop=-1
 ClientWidth=1895
 ClientHeight=4551
-TBDockHeight=8398
+TBDockHeight=5194
 LRDockWidth=1895
 Dockable=1
 StayOnTop=0
@@ -202,8 +250,8 @@ SplitPos=111
 
 [PropInspDesignerSelection]
 ArrangeBy=Name
-SelectedItem=Caption,
-ExpandedItems=ConnectedStoredUsage=0,FetchOptions=0,FormatOptions=0,"LiveBindings Designer=1",Params=0,ResourceOptions=0,Transaction=0,TxOptions=0,UpdateOptions=0,FormatOptions.AssignedValues=0,"LiveBindings Designer.Element Layers=0",Anchors=0,BorderIcons=0,Constraints=0
+SelectedItem=Action,
+ExpandedItems=Anchors=0,BorderIcons=0
 
 [frmDesignPreview]
 PercentageSizes=1
@@ -214,11 +262,11 @@ State=0
 Left=0
 Top=0
 Width=1999
-Height=8058
+Height=3641
 MaxLeft=-1
 MaxTop=-1
 ClientWidth=1999
-ClientHeight=8058
+ClientHeight=3641
 TBDockHeight=5959
 LRDockWidth=2513
 Dockable=1
@@ -400,11 +448,11 @@ State=0
 Left=0
 Top=0
 Width=1999
-Height=8058
+Height=0
 MaxLeft=-1
 MaxTop=-1
 ClientWidth=1999
-ClientHeight=8058
+ClientHeight=0
 TBDockHeight=4879
 LRDockWidth=7148
 Dockable=1
@@ -435,8 +483,8 @@ Create=1
 Visible=0
 Docked=1
 State=0
-Left=-8
-Top=-8
+Left=-187
+Top=-269
 Width=1849
 Height=3143
 MaxLeft=-1
@@ -540,11 +588,11 @@ State=0
 Left=0
 Top=0
 Width=1999
-Height=8058
+Height=0
 MaxLeft=-1
 MaxTop=-1
 ClientWidth=1999
-ClientHeight=8058
+ClientHeight=0
 TBDockHeight=4879
 LRDockWidth=5306
 Dockable=1
@@ -636,7 +684,7 @@ MaxLeft=-1
 MaxTop=-1
 ClientWidth=1999
 ClientHeight=4466
-TBDockHeight=8398
+TBDockHeight=4600
 LRDockWidth=1999
 Dockable=1
 StayOnTop=0
@@ -660,7 +708,7 @@ MaxLeft=-1
 MaxTop=-1
 ClientWidth=1895
 ClientHeight=3410
-TBDockHeight=8398
+TBDockHeight=3556
 LRDockWidth=1895
 Dockable=1
 StayOnTop=0
@@ -684,7 +732,7 @@ MaxLeft=-1
 MaxTop=-1
 ClientWidth=1999
 ClientHeight=3495
-TBDockHeight=8398
+TBDockHeight=4150
 LRDockWidth=1999
 Dockable=1
 StayOnTop=0

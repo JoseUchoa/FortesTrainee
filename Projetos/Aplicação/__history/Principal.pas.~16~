@@ -1,0 +1,57 @@
+unit Principal;
+{
+Requisitos: Criar um sistema para calcular a folha de pagamentos de uma empresa.
+	- Cadastro de cargos: código e nome.
+	- Cadastro de eventos: código, descrição, tipo (desconto/acréscimo).
+	- Tabela de INSS.
+	- Tabela de IRRF.
+	- Cadastro de funcionários: código, nome, data de nascimento, cargo, contato, e-mail, ativo.
+	  * O cadastro de funcionários deve manter o histórico de salários do empredado.
+	- Registrar mudança de salário
+	- Lançar evento para funcionário(s)
+	- Tela de processamento de folha: calcular/recalcular folha de pagamentos para um mês informado.
+		* Consultar dados dos funcionários ativos
+		* Calcular INSS
+		* Calcular IRRF
+		* Verificar Eventos para o mês
+	- Relatório de folha de pagamento.
+	- Relatório de empregados.
+}
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs;
+
+type
+  TFormPrincipal = class(TForm)
+    procedure FormCreate(Sender: TObject);
+    procedure FormDestroy(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FormPrincipal: TFormPrincipal;
+
+implementation
+
+uses
+  Conexao, CadastroCargos;
+
+{$R *.dfm}
+
+procedure TFormPrincipal.FormCreate(Sender: TObject);
+begin
+  DM := TDM.Create(Self);
+end;
+
+procedure TFormPrincipal.FormDestroy(Sender: TObject);
+begin
+  DM.Free;
+end;
+
+end.
