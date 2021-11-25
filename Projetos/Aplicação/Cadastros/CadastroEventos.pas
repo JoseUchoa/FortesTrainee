@@ -33,6 +33,7 @@ type
     QueryEventosDESCRICAO: TStringField;
     DBRadioGroup1: TDBRadioGroup;
     Label3: TLabel;
+    QueryEventosTipoDesc: TStringField;
     procedure FormDestroy(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure AdicionarClick(Sender: TObject);
@@ -40,6 +41,8 @@ type
     procedure RemoverClick(Sender: TObject);
     procedure ConfirmarClick(Sender: TObject);
     procedure CancelarClick(Sender: TObject);
+    procedure PageControlChange(Sender: TObject);
+    procedure QueryEventosCalcFields(DataSet: TDataSet);
   private
     { Private declarations }
   public
@@ -60,6 +63,22 @@ end;
 procedure TFrmCadEventos.FormDestroy(Sender: TObject);
 begin
   QueryEventos.Close;
+end;
+
+procedure TFrmCadEventos.PageControlChange(Sender: TObject);
+begin
+  if (PageControl.ActivePage = Lista) and (QueryEventos.State in [dsInsert,dsEdit]) then
+  begin
+    QueryEventos.Cancel;
+    QueryEventos.Refresh;
+  end;
+end;
+
+procedure TFrmCadEventos.QueryEventosCalcFields(DataSet: TDataSet);
+begin
+  QueryEventosTipoDesc.Value := 'Decrescimo';
+  if QueryEventosTIPO.AsInteger = 1 then
+    QueryEventosTipoDesc.Value  := 'Acrescimo';
 end;
 
 procedure TFrmCadEventos.AdicionarClick(Sender: TObject);
@@ -92,8 +111,7 @@ begin
   if QueryEventos.State in [dsInsert,dsEdit] then
     QueryEventos.Post;
 
-  QueryEventos.Close;
-  QueryEventos.Open;
+  QueryEventos.Refresh;
   PageControl.ActivePage := Lista;
 end;
 

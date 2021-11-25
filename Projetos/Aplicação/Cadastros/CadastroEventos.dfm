@@ -2,8 +2,8 @@ object FrmCadEventos: TFrmCadEventos
   Left = 0
   Top = 0
   Caption = 'Eventos'
-  ClientHeight = 262
-  ClientWidth = 508
+  ClientHeight = 273
+  ClientWidth = 517
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -22,6 +22,7 @@ object FrmCadEventos: TFrmCadEventos
     Height = 246
     ActivePage = Lista
     TabOrder = 0
+    OnChange = PageControlChange
     object Lista: TTabSheet
       Caption = 'Lista'
       object DBGrid1: TDBGrid
@@ -145,9 +146,10 @@ object FrmCadEventos: TFrmCadEventos
     end
   end
   object QueryEventos: TFDQuery
+    OnCalcFields = QueryEventosCalcFields
     Connection = DM.Connection
     SQL.Strings = (
-      'SELECT CODIGO,TIPO,DESCRICAO FROM EVENTOS'
+      'SELECT *  FROM EVENTOS'
       '')
     Left = 304
     Top = 64
@@ -157,16 +159,23 @@ object FrmCadEventos: TFrmCadEventos
       ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
       Required = True
     end
-    object QueryEventosTIPO: TIntegerField
-      FieldName = 'TIPO'
-      Origin = 'TIPO'
-      Required = True
+    object QueryEventosTipoDesc: TStringField
+      FieldKind = fkCalculated
+      FieldName = 'TipoDesc'
+      Size = 15
+      Calculated = True
     end
     object QueryEventosDESCRICAO: TStringField
       FieldName = 'DESCRICAO'
       Origin = 'DESCRICAO'
       Required = True
       Size = 100
+    end
+    object QueryEventosTIPO: TIntegerField
+      FieldName = 'TIPO'
+      Origin = 'TIPO'
+      Required = True
+      Visible = False
     end
   end
   object DataSource: TDataSource

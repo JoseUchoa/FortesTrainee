@@ -36,6 +36,7 @@ type
     procedure ConfirmarClick(Sender: TObject);
     procedure CancelarClick(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
+    procedure PageControlChange(Sender: TObject);
   private
     { Private declarations }
   public
@@ -56,6 +57,15 @@ end;
 procedure TFrmCadCargos.FormDestroy(Sender: TObject);
 begin
   QueryCargos.Close;
+end;
+
+procedure TFrmCadCargos.PageControlChange(Sender: TObject);
+begin
+  if (PageControl.ActivePage = Lista) and (QueryCargos.State in [dsInsert,dsEdit]) then
+  begin
+    QueryCargos.Cancel;
+    QueryCargos.Refresh;
+  end;
 end;
 
 procedure TFrmCadCargos.AdicionarClick(Sender: TObject);
@@ -86,8 +96,7 @@ begin
   if QueryCargos.State in [dsInsert,dsEdit] then
     QueryCargos.Post;
 
-  QueryCargos.Close;
-  QueryCargos.Open;
+  QueryCargos.Refresh;
   PageControl.ActivePage := Lista;
 end;
 

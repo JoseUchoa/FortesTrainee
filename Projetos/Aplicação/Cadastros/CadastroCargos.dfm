@@ -22,12 +22,13 @@ object FrmCadCargos: TFrmCadCargos
     Height = 215
     ActivePage = Lista
     TabOrder = 0
+    OnChange = PageControlChange
     object Lista: TTabSheet
       Caption = 'Lista'
       object DBGrid1: TDBGrid
         Left = 0
         Top = 3
-        Width = 203
+        Width = 231
         Height = 166
         DataSource = DataSource
         TabOrder = 0
@@ -38,7 +39,7 @@ object FrmCadCargos: TFrmCadCargos
         TitleFont.Style = []
       end
       object Adicionar: TButton
-        Left = 227
+        Left = 251
         Top = 24
         Width = 75
         Height = 25
@@ -47,7 +48,7 @@ object FrmCadCargos: TFrmCadCargos
         OnClick = AdicionarClick
       end
       object Editar: TButton
-        Left = 227
+        Left = 251
         Top = 72
         Width = 75
         Height = 25
@@ -56,7 +57,7 @@ object FrmCadCargos: TFrmCadCargos
         OnClick = EditarClick
       end
       object Remover: TButton
-        Left = 227
+        Left = 251
         Top = 120
         Width = 75
         Height = 25
@@ -133,6 +134,7 @@ object FrmCadCargos: TFrmCadCargos
       Required = True
     end
     object QueryCargosNOME: TStringField
+      DisplayWidth = 20
       FieldName = 'NOME'
       Origin = 'NOME'
       Required = True

@@ -35,8 +35,7 @@ procedure TDM.DataModuleCreate(Sender: TObject);
 begin
   try
 //    FAppPath := ExtractFilePath(Application.ExeName);
-    FAppPath := 'C:\Users\joseg\Documents\GitHub\FortesTrainee\Projetos\Aplicação\';
-    Connection.Params.Values['Database'] := AppPath + 'dados.fdb';
+//    Connection.Params.Values['Database'] := AppPath + 'dados.fdb';
     Connection.Connected := True;
   except
     ShowMessage('Falha ao iniciar aplicação.');

@@ -22,10 +22,11 @@ object FrmCadFuncionarios: TFrmCadFuncionarios
     Height = 321
     ActivePage = Lista
     TabOrder = 0
+    OnChange = PageControlChange
     object Lista: TTabSheet
       Caption = 'Lista'
       object DBGrid1: TDBGrid
-        Left = 3
+        Left = 0
         Top = 3
         Width = 542
         Height = 287
@@ -106,16 +107,16 @@ object FrmCadFuncionarios: TFrmCadFuncionarios
         FocusControl = DBEdit5
       end
       object Label6: TLabel
-        Left = 3
-        Top = 192
+        Left = 4
+        Top = 184
         Width = 30
         Height = 13
         Caption = 'EMAIL'
         FocusControl = DBEdit6
       end
       object Label7: TLabel
-        Left = 431
-        Top = 192
+        Left = 432
+        Top = 184
         Width = 31
         Height = 13
         Caption = 'ATIVO'
@@ -165,8 +166,8 @@ object FrmCadFuncionarios: TFrmCadFuncionarios
         TabOrder = 3
       end
       object DBEdit6: TDBEdit
-        Left = 3
-        Top = 211
+        Left = 4
+        Top = 203
         Width = 337
         Height = 21
         DataField = 'EMAIL'
@@ -174,10 +175,10 @@ object FrmCadFuncionarios: TFrmCadFuncionarios
         TabOrder = 4
       end
       object DBRadioGroup1: TDBRadioGroup
-        Left = 431
-        Top = 211
+        Left = 430
+        Top = 203
         Width = 185
-        Height = 38
+        Height = 30
         Columns = 2
         DataField = 'ATIVO'
         DataSource = DtsFuncionarios
@@ -190,7 +191,7 @@ object FrmCadFuncionarios: TFrmCadFuncionarios
           '0')
       end
       object DateTimePicker1: TDateTimePicker
-        Left = 431
+        Left = 430
         Top = 67
         Width = 186
         Height = 21
@@ -198,18 +199,22 @@ object FrmCadFuncionarios: TFrmCadFuncionarios
         Time = 0.982635381944419400
         TabOrder = 6
       end
-      object DBComboBox1: TDBComboBox
+      object DBLookupComboBox1: TDBLookupComboBox
         Left = 431
         Top = 133
-        Width = 186
+        Width = 145
         Height = 21
         DataField = 'CARGO'
         DataSource = DtsFuncionarios
+        KeyField = 'CODIGO'
+        ListField = 'NOME'
+        ListSource = DtsCargos
         TabOrder = 7
       end
     end
   end
   object QueryFuncionarios: TFDQuery
+    OnCalcFields = QueryFuncionariosCalcFields
     Connection = DM.Connection
     SQL.Strings = (
       'SELECT * FROM FUNCIONARIOS')
@@ -221,12 +226,32 @@ object FrmCadFuncionarios: TFrmCadFuncionarios
       Required = True
     end
     object QueryFuncionariosNOME: TStringField
+      DisplayWidth = 50
       FieldName = 'NOME'
       Origin = 'NOME'
       Required = True
       Size = 100
     end
+    object QueryFuncionariosAtivoDesc: TStringField
+      FieldKind = fkCalculated
+      FieldName = 'AtivoDesc'
+      Size = 10
+      Calculated = True
+    end
+    object QueryFuncionariosEMAIL: TStringField
+      DisplayWidth = 20
+      FieldName = 'EMAIL'
+      Origin = 'EMAIL'
+      Size = 100
+    end
+    object QueryFuncionariosCONTATO: TStringField
+      DisplayWidth = 15
+      FieldName = 'CONTATO'
+      Origin = 'CONTATO'
+      Size = 100
+    end
     object QueryFuncionariosNASCIMENTO: TDateField
+      Alignment = taCenter
       FieldName = 'NASCIMENTO'
       Origin = 'NASCIMENTO'
       Required = True
@@ -235,21 +260,14 @@ object FrmCadFuncionarios: TFrmCadFuncionarios
       FieldName = 'CARGO'
       Origin = 'CARGO'
       Required = True
-    end
-    object QueryFuncionariosCONTATO: TStringField
-      FieldName = 'CONTATO'
-      Origin = 'CONTATO'
-      Size = 100
-    end
-    object QueryFuncionariosEMAIL: TStringField
-      FieldName = 'EMAIL'
-      Origin = 'EMAIL'
-      Size = 100
+      Visible = False
     end
     object QueryFuncionariosATIVO: TIntegerField
+      Alignment = taLeftJustify
       FieldName = 'ATIVO'
       Origin = 'ATIVO'
       Required = True
+      Visible = False
     end
   end
   object DtsFuncionarios: TDataSource

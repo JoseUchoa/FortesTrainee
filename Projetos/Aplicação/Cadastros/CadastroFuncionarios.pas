@@ -24,13 +24,11 @@ type
     Cancelar: TButton;
     QueryFuncionarios: TFDQuery;
     DtsFuncionarios: TDataSource;
-    QueryFuncionariosCODIGO: TIntegerField;
-    QueryFuncionariosNOME: TStringField;
     QueryFuncionariosNASCIMENTO: TDateField;
-    QueryFuncionariosCARGO: TIntegerField;
     QueryFuncionariosCONTATO: TStringField;
     QueryFuncionariosEMAIL: TStringField;
     QueryFuncionariosATIVO: TIntegerField;
+    QueryFuncionariosCARGO: TIntegerField;
     Label1: TLabel;
     Label2: TLabel;
     DBEdit2: TDBEdit;
@@ -48,7 +46,10 @@ type
     DtsCargos: TDataSource;
     DBRadioGroup1: TDBRadioGroup;
     DateTimePicker1: TDateTimePicker;
-    DBComboBox1: TDBComboBox;
+    DBLookupComboBox1: TDBLookupComboBox;
+    QueryFuncionariosCODIGO: TIntegerField;
+    QueryFuncionariosNOME: TStringField;
+    QueryFuncionariosAtivoDesc: TStringField;
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
     procedure AdicionarClick(Sender: TObject);
@@ -56,6 +57,10 @@ type
     procedure RemoverClick(Sender: TObject);
     procedure ConfirmarClick(Sender: TObject);
     procedure CancelarClick(Sender: TObject);
+    procedure PageControlChange(Sender: TObject);
+    procedure QueryFuncionariosAtivoDescGetText(Sender: TField;
+      var Text: string; DisplayText: Boolean);
+    procedure QueryFuncionariosCalcFields(DataSet: TDataSet);
   private
     { Private declarations }
   public
@@ -72,8 +77,6 @@ procedure TFrmCadFuncionarios.FormCreate(Sender: TObject);
 begin
   QueryFuncionarios.Open;
   QueryCargos.Open;
-
-
 end;
 
 procedure TFrmCadFuncionarios.FormDestroy(Sender: TObject);
@@ -82,10 +85,33 @@ begin
   QueryCargos.Close;
 end;
 
+procedure TFrmCadFuncionarios.PageControlChange(Sender: TObject);
+begin
+  if (PageControl.ActivePage = Lista) and (QueryFuncionarios.State in [dsInsert,dsEdit]) then
+  begin
+    QueryFuncionarios.Cancel;
+    QueryFuncionarios.Refresh;
+  end;
+end;
+
+procedure TFrmCadFuncionarios.QueryFuncionariosAtivoDescGetText(Sender: TField;
+  var Text: string; DisplayText: Boolean);
+begin
+//  QueryFuncionariosAtivoDesc.Text := 'Não';
+//  if QueryFuncionariosATIVO.AsInteger = 1 then
+//    QueryFuncionariosAtivoDesc.Text := 'Sim';
+end;
+
+procedure TFrmCadFuncionarios.QueryFuncionariosCalcFields(DataSet: TDataSet);
+begin
+  QueryFuncionariosAtivoDesc.Value := 'Não';
+  if QueryFuncionariosATIVO.AsInteger = 1 then
+    QueryFuncionariosAtivoDesc.Value := 'Sim';
+end;
+
 procedure TFrmCadFuncionarios.AdicionarClick(Sender: TObject);
 begin
   QueryFuncionarios.Append;
-
   QueryFuncionariosATIVO.Value := 1;
 
   PageControl.ActivePage := Registro;
@@ -96,7 +122,6 @@ begin
   if not QueryFuncionarios.IsEmpty then
   begin
     QueryFuncionarios.Edit;
-
     DateTimePicker1.DateTime :=  QueryFuncionariosNASCIMENTO.Value;
 
     PageControl.ActivePage := Registro;
@@ -116,11 +141,9 @@ begin
   if QueryFuncionarios.State in [dsInsert,dsEdit] then
   begin
     QueryFuncionariosNASCIMENTO.Value := DateTimePicker1.DateTime;
-    QueryFuncionariosCARGO.Value := 4;
     QueryFuncionarios.Post;
   end;
-  QueryFuncionarios.Close;
-  QueryFuncionarios.Open;
+  QueryFuncionarios.Refresh;
   PageControl.ActivePage := Lista;
 end;
 
