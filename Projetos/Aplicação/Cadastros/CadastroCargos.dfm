@@ -2,8 +2,8 @@ object FrmCadCargos: TFrmCadCargos
   Left = 0
   Top = 0
   Caption = 'Cargos'
-  ClientHeight = 231
-  ClientWidth = 354
+  ClientHeight = 230
+  ClientWidth = 345
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -13,24 +13,35 @@ object FrmCadCargos: TFrmCadCargos
   OldCreateOrder = False
   OnCreate = FormCreate
   OnDestroy = FormDestroy
+  DesignSize = (
+    345
+    230)
   PixelsPerInch = 96
   TextHeight = 13
   object PageControl: TPageControl
     Left = 8
     Top = 8
-    Width = 337
-    Height = 215
-    ActivePage = Lista
+    Width = 328
+    Height = 214
+    ActivePage = TsLista
+    Anchors = [akLeft, akTop, akRight, akBottom]
     TabOrder = 0
     OnChange = PageControlChange
-    object Lista: TTabSheet
+    ExplicitWidth = 337
+    ExplicitHeight = 215
+    object TsLista: TTabSheet
       Caption = 'Lista'
+      DesignSize = (
+        320
+        186)
       object DBGrid1: TDBGrid
         Left = 0
         Top = 3
-        Width = 231
-        Height = 166
+        Width = 215
+        Height = 174
+        Anchors = [akLeft, akTop, akRight, akBottom]
         DataSource = DataSource
+        ReadOnly = True
         TabOrder = 0
         TitleFont.Charset = DEFAULT_CHARSET
         TitleFont.Color = clWindowText
@@ -38,53 +49,62 @@ object FrmCadCargos: TFrmCadCargos
         TitleFont.Name = 'Tahoma'
         TitleFont.Style = []
       end
-      object Adicionar: TButton
-        Left = 251
-        Top = 24
+      object BtnAdicionar: TButton
+        Left = 233
+        Top = 30
         Width = 75
         Height = 25
+        Anchors = [akRight, akBottom]
         Caption = 'Adicionar'
         TabOrder = 1
-        OnClick = AdicionarClick
+        OnClick = BtnAdicionarClick
+        ExplicitLeft = 251
+        ExplicitTop = 24
       end
-      object Editar: TButton
-        Left = 251
-        Top = 72
+      object BtnEditar: TButton
+        Left = 233
+        Top = 78
         Width = 75
         Height = 25
+        Anchors = [akRight, akBottom]
         Caption = 'Editar'
         TabOrder = 2
-        OnClick = EditarClick
+        OnClick = BtnEditarClick
+        ExplicitLeft = 251
+        ExplicitTop = 72
       end
-      object Remover: TButton
-        Left = 251
-        Top = 120
+      object BtnRemover: TButton
+        Left = 233
+        Top = 126
         Width = 75
         Height = 25
+        Anchors = [akRight, akBottom]
         Caption = 'Remover'
         TabOrder = 3
-        OnClick = RemoverClick
+        OnClick = BtnRemoverClick
+        ExplicitLeft = 251
+        ExplicitTop = 120
       end
     end
-    object Registro: TTabSheet
+    object TsRegistro: TTabSheet
       Caption = 'Registro'
       ImageIndex = 1
-      object Label1: TLabel
+      object LblCodigo: TLabel
         Left = 16
         Top = 16
-        Width = 41
+        Width = 33
         Height = 13
-        Caption = 'CODIGO'
+        Caption = 'C'#243'digo'
       end
-      object Label2: TLabel
+      object LblNome: TLabel
         Left = 16
         Top = 62
-        Width = 29
+        Width = 27
         Height = 13
-        Caption = 'NOME'
-        FocusControl = DBEdit2
+        Caption = 'Nome'
+        FocusControl = EdtNome
       end
-      object DBText1: TDBText
+      object TxtCodigo: TDBText
         Left = 16
         Top = 35
         Width = 65
@@ -92,7 +112,7 @@ object FrmCadCargos: TFrmCadCargos
         DataField = 'CODIGO'
         DataSource = DataSource
       end
-      object DBEdit2: TDBEdit
+      object EdtNome: TDBEdit
         Left = 16
         Top = 81
         Width = 171
@@ -101,39 +121,42 @@ object FrmCadCargos: TFrmCadCargos
         DataSource = DataSource
         TabOrder = 0
       end
-      object Confirmar: TButton
+      object BtnConfirmar: TButton
         Left = 16
         Top = 144
         Width = 75
         Height = 25
         Caption = 'Confirmar'
         TabOrder = 1
-        OnClick = ConfirmarClick
+        OnClick = BtnConfirmarClick
       end
-      object Cancelar: TButton
+      object BtnCancelar: TButton
         Left = 112
         Top = 144
         Width = 75
         Height = 25
         Caption = 'Cancelar'
         TabOrder = 2
-        OnClick = CancelarClick
+        OnClick = BtnCancelarClick
       end
     end
   end
   object QueryCargos: TFDQuery
     Connection = DM.Connection
     SQL.Strings = (
-      'SELECT * FROM CARGOS')
+      'SELECT * FROM CARGOS'
+      'ORDER BY NOME ASC')
     Left = 304
     Top = 8
     object QueryCargosCODIGO: TIntegerField
+      DisplayLabel = 'C'#243'digo'
       FieldName = 'CODIGO'
       Origin = 'CODIGO'
       ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
       Required = True
     end
     object QueryCargosNOME: TStringField
+      DisplayLabel = 'Nome'
       DisplayWidth = 20
       FieldName = 'NOME'
       Origin = 'NOME'

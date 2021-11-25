@@ -14,33 +14,33 @@ uses
 type
   TFrmCadEventos = class(TForm)
     PageControl: TPageControl;
-    Lista: TTabSheet;
+    TsLista: TTabSheet;
     DBGrid1: TDBGrid;
-    Adicionar: TButton;
-    Editar: TButton;
-    Remover: TButton;
-    Registro: TTabSheet;
-    Label1: TLabel;
-    Label2: TLabel;
-    DBText1: TDBText;
-    DBEdit2: TDBEdit;
-    Confirmar: TButton;
-    Cancelar: TButton;
+    BtnAdicionar: TButton;
+    BtnEditar: TButton;
+    BtnRemover: TButton;
+    TsRegistro: TTabSheet;
+    LblCodigo: TLabel;
+    LblTipo: TLabel;
+    TxtCodigo: TDBText;
+    EdtDesc: TDBEdit;
+    BtnConfirmar: TButton;
+    BtnCancelar: TButton;
     QueryEventos: TFDQuery;
     DataSource: TDataSource;
     QueryEventosCODIGO: TIntegerField;
     QueryEventosTIPO: TIntegerField;
     QueryEventosDESCRICAO: TStringField;
-    DBRadioGroup1: TDBRadioGroup;
-    Label3: TLabel;
+    RgTipo: TDBRadioGroup;
+    LblDesc: TLabel;
     QueryEventosTipoDesc: TStringField;
     procedure FormDestroy(Sender: TObject);
     procedure FormCreate(Sender: TObject);
-    procedure AdicionarClick(Sender: TObject);
-    procedure EditarClick(Sender: TObject);
-    procedure RemoverClick(Sender: TObject);
-    procedure ConfirmarClick(Sender: TObject);
-    procedure CancelarClick(Sender: TObject);
+    procedure BtnAdicionarClick(Sender: TObject);
+    procedure BtnEditarClick(Sender: TObject);
+    procedure BtnRemoverClick(Sender: TObject);
+    procedure BtnConfirmarClick(Sender: TObject);
+    procedure BtnCancelarClick(Sender: TObject);
     procedure PageControlChange(Sender: TObject);
     procedure QueryEventosCalcFields(DataSet: TDataSet);
   private
@@ -58,6 +58,7 @@ implementation
 procedure TFrmCadEventos.FormCreate(Sender: TObject);
 begin
   QueryEventos.Open;
+  PageControl.ActivePage := TsLista;
 end;
 
 procedure TFrmCadEventos.FormDestroy(Sender: TObject);
@@ -67,7 +68,7 @@ end;
 
 procedure TFrmCadEventos.PageControlChange(Sender: TObject);
 begin
-  if (PageControl.ActivePage = Lista) and (QueryEventos.State in [dsInsert,dsEdit]) then
+  if (PageControl.ActivePage = TsLista) and (QueryEventos.State in [dsInsert,dsEdit]) then
   begin
     QueryEventos.Cancel;
     QueryEventos.Refresh;
@@ -76,34 +77,34 @@ end;
 
 procedure TFrmCadEventos.QueryEventosCalcFields(DataSet: TDataSet);
 begin
-  QueryEventosTipoDesc.Value := 'Decrescimo';
+  QueryEventosTipoDesc.Value := 'Desconto';
   if QueryEventosTIPO.AsInteger = 1 then
     QueryEventosTipoDesc.Value  := 'Acrescimo';
 end;
 
-procedure TFrmCadEventos.AdicionarClick(Sender: TObject);
+procedure TFrmCadEventos.BtnAdicionarClick(Sender: TObject);
 begin
   QueryEventos.Append;
   QueryEventosTIPO.Value := 1;
-  PageControl.ActivePage := Registro;
+  PageControl.ActivePage := TsRegistro;
 end;
 
-procedure TFrmCadEventos.EditarClick(Sender: TObject);
+procedure TFrmCadEventos.BtnEditarClick(Sender: TObject);
 begin
   if not QueryEventos.IsEmpty then
   begin
     QueryEventos.Edit;
-    PageControl.ActivePage := Registro;
+    PageControl.ActivePage := TsRegistro;
   end;
 end;
 
-procedure TFrmCadEventos.RemoverClick(Sender: TObject);
+procedure TFrmCadEventos.BtnRemoverClick(Sender: TObject);
 begin
   if not QueryEventos.IsEmpty then
     QueryEventos.Delete;
 end;
 
-procedure TFrmCadEventos.ConfirmarClick(Sender: TObject);
+procedure TFrmCadEventos.BtnConfirmarClick(Sender: TObject);
 begin
   if QueryEventos.State = dsInsert then
     QueryEventosCODIGO.Value := 0;
@@ -112,14 +113,14 @@ begin
     QueryEventos.Post;
 
   QueryEventos.Refresh;
-  PageControl.ActivePage := Lista;
+  PageControl.ActivePage := TsLista;
 end;
 
-procedure TFrmCadEventos.CancelarClick(Sender: TObject);
+procedure TFrmCadEventos.BtnCancelarClick(Sender: TObject);
 begin
   if QueryEventos.State in [dsInsert,dsEdit] then
     QueryEventos.Cancel;
-  PageControl.ActivePage := Lista;
+  PageControl.ActivePage := TsLista;
 end;
 
 end.

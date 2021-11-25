@@ -14,14 +14,14 @@ uses
 type
   TFrmCadFuncionarios = class(TForm)
     PageControl: TPageControl;
-    Lista: TTabSheet;
+    TsLista: TTabSheet;
     DBGrid1: TDBGrid;
     Adicionar: TButton;
-    Editar: TButton;
-    Remover: TButton;
-    Registro: TTabSheet;
-    Confirmar: TButton;
-    Cancelar: TButton;
+    BtnEditar: TButton;
+    BtnRemover: TButton;
+    TsRegistro: TTabSheet;
+    BtnConfirmar: TButton;
+    BtnCancelar: TButton;
     QueryFuncionarios: TFDQuery;
     DtsFuncionarios: TDataSource;
     QueryFuncionariosNASCIMENTO: TDateField;
@@ -29,37 +29,46 @@ type
     QueryFuncionariosEMAIL: TStringField;
     QueryFuncionariosATIVO: TIntegerField;
     QueryFuncionariosCARGO: TIntegerField;
-    Label1: TLabel;
-    Label2: TLabel;
-    DBEdit2: TDBEdit;
-    Label3: TLabel;
-    Label4: TLabel;
+    LblCodigo: TLabel;
+    LblNome: TLabel;
+    EdtNome: TDBEdit;
+    LblNasc: TLabel;
+    LblCargo: TLabel;
     Label5: TLabel;
-    DBEdit5: TDBEdit;
-    Label6: TLabel;
-    DBEdit6: TDBEdit;
-    Label7: TLabel;
-    DBText1: TDBText;
+    EdtContato: TDBEdit;
+    LblEmail: TLabel;
+    EdtEmail: TDBEdit;
+    LblAtivo: TLabel;
+    TxtCodigo: TDBText;
     QueryCargos: TFDQuery;
     QueryCargosCODIGO: TIntegerField;
     QueryCargosNOME: TStringField;
     DtsCargos: TDataSource;
-    DBRadioGroup1: TDBRadioGroup;
-    DateTimePicker1: TDateTimePicker;
-    DBLookupComboBox1: TDBLookupComboBox;
+    RgAtivo: TDBRadioGroup;
+    DtpNasc: TDateTimePicker;
+    LcbCargo: TDBLookupComboBox;
     QueryFuncionariosCODIGO: TIntegerField;
     QueryFuncionariosNOME: TStringField;
     QueryFuncionariosAtivoDesc: TStringField;
+    QuerySalarios: TFDQuery;
+    DtsSalarios: TDataSource;
+    DbgSalarios: TDBGrid;
+    QuerySalariosCODIGO: TIntegerField;
+    QuerySalariosFUNCIONARIO_COD: TIntegerField;
+    QuerySalariosSALARIO: TIntegerField;
+    QuerySalariosDATA: TDateField;
+    LblSalarios: TLabel;
+    PnlSalario: TPanel;
+    EdtSalario: TEdit;
+    LblSalario: TLabel;
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
     procedure AdicionarClick(Sender: TObject);
-    procedure EditarClick(Sender: TObject);
-    procedure RemoverClick(Sender: TObject);
-    procedure ConfirmarClick(Sender: TObject);
-    procedure CancelarClick(Sender: TObject);
+    procedure BtnEditarClick(Sender: TObject);
+    procedure BtnRemoverClick(Sender: TObject);
+    procedure BtnConfirmarClick(Sender: TObject);
+    procedure BtnCancelarClick(Sender: TObject);
     procedure PageControlChange(Sender: TObject);
-    procedure QueryFuncionariosAtivoDescGetText(Sender: TField;
-      var Text: string; DisplayText: Boolean);
     procedure QueryFuncionariosCalcFields(DataSet: TDataSet);
   private
     { Private declarations }
@@ -76,30 +85,28 @@ implementation
 procedure TFrmCadFuncionarios.FormCreate(Sender: TObject);
 begin
   QueryFuncionarios.Open;
+  QuerySalarios.Open;
   QueryCargos.Open;
+  PageControl.ActivePage := TsLista;
 end;
 
 procedure TFrmCadFuncionarios.FormDestroy(Sender: TObject);
 begin
   QueryFuncionarios.Close;
+  QuerySalarios.Close;
   QueryCargos.Close;
 end;
 
 procedure TFrmCadFuncionarios.PageControlChange(Sender: TObject);
 begin
-  if (PageControl.ActivePage = Lista) and (QueryFuncionarios.State in [dsInsert,dsEdit]) then
+  if (PageControl.ActivePage = TsLista) and (QueryFuncionarios.State in [dsInsert,dsEdit]) then
   begin
+    PnlSalario.Visible := False;
+    EdtSalario.Text := '';
     QueryFuncionarios.Cancel;
     QueryFuncionarios.Refresh;
+    QuerySalarios.Refresh;
   end;
-end;
-
-procedure TFrmCadFuncionarios.QueryFuncionariosAtivoDescGetText(Sender: TField;
-  var Text: string; DisplayText: Boolean);
-begin
-//  QueryFuncionariosAtivoDesc.Text := 'Não';
-//  if QueryFuncionariosATIVO.AsInteger = 1 then
-//    QueryFuncionariosAtivoDesc.Text := 'Sim';
 end;
 
 procedure TFrmCadFuncionarios.QueryFuncionariosCalcFields(DataSet: TDataSet);
@@ -113,45 +120,68 @@ procedure TFrmCadFuncionarios.AdicionarClick(Sender: TObject);
 begin
   QueryFuncionarios.Append;
   QueryFuncionariosATIVO.Value := 1;
-
-  PageControl.ActivePage := Registro;
+  PnlSalario.Visible := True;
+  EdtSalario.Text := '';
+  PageControl.ActivePage := TsRegistro;
 end;
 
-procedure TFrmCadFuncionarios.EditarClick(Sender: TObject);
+procedure TFrmCadFuncionarios.BtnEditarClick(Sender: TObject);
 begin
   if not QueryFuncionarios.IsEmpty then
   begin
     QueryFuncionarios.Edit;
-    DateTimePicker1.DateTime :=  QueryFuncionariosNASCIMENTO.Value;
+    DtpNasc.DateTime :=  QueryFuncionariosNASCIMENTO.Value; ;
+    PnlSalario.Visible := False;
+    EdtSalario.Text := '';
 
-    PageControl.ActivePage := Registro;
+    PageControl.ActivePage := TsRegistro;
   end;
 end;
 
-procedure TFrmCadFuncionarios.RemoverClick(Sender: TObject);
+procedure TFrmCadFuncionarios.BtnRemoverClick(Sender: TObject);
 begin
   if not QueryFuncionarios.IsEmpty then
     QueryFuncionarios.Delete;
 end;
-procedure TFrmCadFuncionarios.ConfirmarClick(Sender: TObject);
+procedure TFrmCadFuncionarios.BtnConfirmarClick(Sender: TObject);
+var
+  Salario: Currency;
 begin
   if QueryFuncionarios.State = dsInsert then
     QueryFuncionariosCODIGO.Value := 0;
 
   if QueryFuncionarios.State in [dsInsert,dsEdit] then
   begin
-    QueryFuncionariosNASCIMENTO.Value := DateTimePicker1.DateTime;
+    QueryFuncionariosNASCIMENTO.Value := DtpNasc.DateTime;
     QueryFuncionarios.Post;
+    QueryFuncionarios.Refresh;
+
+    Salario := StrToFloatDef(EdtSalario.Text,0);
+    if Salario > 0 then
+    begin
+      QuerySalarios.Append;
+      QuerySalariosCODIGO.Value := 0;
+      QuerySalariosFUNCIONARIO_COD.Value := QueryFuncionariosCODIGO.Value;
+      QuerySalariosDATA.AsDateTime := Now;
+      QuerySalariosSALARIO.AsCurrency := Salario;
+      QuerySalarios.Post;
+      QuerySalarios.Refresh;
+    end;
+
+    EdtSalario.Text := '';
+    PnlSalario.Visible := False;
   end;
-  QueryFuncionarios.Refresh;
-  PageControl.ActivePage := Lista;
+  PageControl.ActivePage := TsLista;
 end;
 
-procedure TFrmCadFuncionarios.CancelarClick(Sender: TObject);
+procedure TFrmCadFuncionarios.BtnCancelarClick(Sender: TObject);
 begin
   if QueryFuncionarios.State in [dsInsert,dsEdit] then
     QueryFuncionarios.Cancel;
-  PageControl.ActivePage := Lista;
+
+  EdtSalario.Text := '';
+  PnlSalario.Visible := False;
+  PageControl.ActivePage := TsLista;
 end;
 
 end.
