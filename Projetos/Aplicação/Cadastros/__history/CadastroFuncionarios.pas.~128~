@@ -53,7 +53,6 @@ type
     QuerySalarios: TFDQuery;
     DtsSalarios: TDataSource;
     DbgSalarios: TDBGrid;
-    QuerySalariosCODIGO: TIntegerField;
     QuerySalariosFUNCIONARIO_COD: TIntegerField;
     QuerySalariosSALARIO: TIntegerField;
     QuerySalariosDATA: TDateField;
@@ -130,7 +129,7 @@ begin
   if not QueryFuncionarios.IsEmpty then
   begin
     QueryFuncionarios.Edit;
-    DateTimePicker1.DateTime :=  QueryFuncionariosNASCIMENTO.Value; ;
+    DtpNasc.DateTime :=  QueryFuncionariosNASCIMENTO.Value; ;
     PnlSalario.Visible := False;
     EdtSalario.Text := '';
 
@@ -152,15 +151,15 @@ begin
 
   if QueryFuncionarios.State in [dsInsert,dsEdit] then
   begin
-    QueryFuncionariosNASCIMENTO.Value := DateTimePicker1.DateTime;
+    QueryFuncionariosNASCIMENTO.Value := DtpNasc.DateTime;
     QueryFuncionarios.Post;
     QueryFuncionarios.Refresh;
 
     Salario := StrToFloatDef(EdtSalario.Text,0);
     if Salario > 0 then
     begin
+      showmessage(IntToStr(QueryFuncionariosCODIGO.Value) + ' ' + inttostr(QuerySalariosFUNCIONARIO_COD.Value));
       QuerySalarios.Append;
-      QuerySalariosCODIGO.Value := 0;
       QuerySalariosFUNCIONARIO_COD.Value := QueryFuncionariosCODIGO.Value;
       QuerySalariosDATA.AsDateTime := Now;
       QuerySalariosSALARIO.AsCurrency := Salario;

@@ -27,8 +27,6 @@ object FrmCadFuncionarios: TFrmCadFuncionarios
     Anchors = [akLeft, akTop, akRight, akBottom]
     TabOrder = 0
     OnChange = PageControlChange
-    ExplicitWidth = 666
-    ExplicitHeight = 421
     object TsLista: TTabSheet
       Caption = 'Lista'
       DesignSize = (
@@ -58,7 +56,6 @@ object FrmCadFuncionarios: TFrmCadFuncionarios
         Caption = 'Adicionar'
         TabOrder = 1
         OnClick = AdicionarClick
-        ExplicitTop = 365
       end
       object BtnEditar: TButton
         Left = 81
@@ -69,7 +66,6 @@ object FrmCadFuncionarios: TFrmCadFuncionarios
         Caption = 'Editar'
         TabOrder = 2
         OnClick = BtnEditarClick
-        ExplicitTop = 365
       end
       object BtnRemover: TButton
         Left = 162
@@ -80,7 +76,6 @@ object FrmCadFuncionarios: TFrmCadFuncionarios
         Caption = 'Remover'
         TabOrder = 3
         OnClick = BtnRemoverClick
-        ExplicitTop = 365
       end
     end
     object TsRegistro: TTabSheet
@@ -376,15 +371,8 @@ object FrmCadFuncionarios: TFrmCadFuncionarios
     SQL.Strings = (
       'SELECT * FROM FUNCIONARIO_SALARIO'
       'ORDER BY "DATA" DESC')
-    Left = 296
-    object QuerySalariosCODIGO: TIntegerField
-      DisplayLabel = 'C'#243'digo'
-      DisplayWidth = 5
-      FieldName = 'CODIGO'
-      Origin = 'CODIGO'
-      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
-      Required = True
-    end
+    Left = 304
+    Top = 8
     object QuerySalariosFUNCIONARIO_COD: TIntegerField
       FieldName = 'FUNCIONARIO_COD'
       Origin = 'FUNCIONARIO_COD'

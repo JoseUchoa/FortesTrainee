@@ -9,7 +9,7 @@ uses
   FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param,
   FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf,
   FireDAC.Stan.Async, FireDAC.DApt, FireDAC.Comp.DataSet, FireDAC.Comp.Client,
-  Vcl.ExtCtrls;
+  Vcl.ExtCtrls, Math;
 
 type
   TFrmCadFuncionarios = class(TForm)
@@ -50,17 +50,16 @@ type
     QueryFuncionariosCODIGO: TIntegerField;
     QueryFuncionariosNOME: TStringField;
     QueryFuncionariosAtivoDesc: TStringField;
-    QuerySalarios: TFDQuery;
-    DtsSalarios: TDataSource;
     DbgSalarios: TDBGrid;
-    QuerySalariosCODIGO: TIntegerField;
-    QuerySalariosFUNCIONARIO_COD: TIntegerField;
-    QuerySalariosSALARIO: TIntegerField;
-    QuerySalariosDATA: TDateField;
     LblSalarios: TLabel;
     PnlSalario: TPanel;
     EdtSalario: TEdit;
     LblSalario: TLabel;
+    QuerySalarios: TFDQuery;
+    QuerySalariosFUNCIONARIO_COD: TIntegerField;
+    QuerySalariosSALARIO: TIntegerField;
+    QuerySalariosDATA: TDateField;
+    DtsSalarios: TDataSource;
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
     procedure AdicionarClick(Sender: TObject);
@@ -71,9 +70,9 @@ type
     procedure PageControlChange(Sender: TObject);
     procedure QueryFuncionariosCalcFields(DataSet: TDataSet);
   private
-    { Private declarations }
+    FMaiorFuncCod: Integer;
   public
-    { Public declarations }
+    property MaiorFuncCod: Integer read FMaiorFuncCod;
   end;
 
 var
@@ -111,6 +110,7 @@ end;
 
 procedure TFrmCadFuncionarios.QueryFuncionariosCalcFields(DataSet: TDataSet);
 begin
+  FMaiorFuncCod := Max(MaiorFuncCod, QueryFuncionariosCODIGO.Value);
   QueryFuncionariosAtivoDesc.Value := 'Não';
   if QueryFuncionariosATIVO.AsInteger = 1 then
     QueryFuncionariosAtivoDesc.Value := 'Sim';
@@ -160,8 +160,7 @@ begin
     if Salario > 0 then
     begin
       QuerySalarios.Append;
-      QuerySalariosCODIGO.Value := 0;
-      QuerySalariosFUNCIONARIO_COD.Value := QueryFuncionariosCODIGO.Value;
+      QuerySalariosFUNCIONARIO_COD.Value := MaiorFuncCod;
       QuerySalariosDATA.AsDateTime := Now;
       QuerySalariosSALARIO.AsCurrency := Salario;
       QuerySalarios.Post;

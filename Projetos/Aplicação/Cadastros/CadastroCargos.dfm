@@ -27,8 +27,6 @@ object FrmCadCargos: TFrmCadCargos
     Anchors = [akLeft, akTop, akRight, akBottom]
     TabOrder = 0
     OnChange = PageControlChange
-    ExplicitWidth = 337
-    ExplicitHeight = 215
     object TsLista: TTabSheet
       Caption = 'Lista'
       DesignSize = (
@@ -36,7 +34,7 @@ object FrmCadCargos: TFrmCadCargos
         186)
       object DBGrid1: TDBGrid
         Left = 0
-        Top = 3
+        Top = 0
         Width = 215
         Height = 174
         Anchors = [akLeft, akTop, akRight, akBottom]
@@ -58,8 +56,6 @@ object FrmCadCargos: TFrmCadCargos
         Caption = 'Adicionar'
         TabOrder = 1
         OnClick = BtnAdicionarClick
-        ExplicitLeft = 251
-        ExplicitTop = 24
       end
       object BtnEditar: TButton
         Left = 233
@@ -70,8 +66,6 @@ object FrmCadCargos: TFrmCadCargos
         Caption = 'Editar'
         TabOrder = 2
         OnClick = BtnEditarClick
-        ExplicitLeft = 251
-        ExplicitTop = 72
       end
       object BtnRemover: TButton
         Left = 233
@@ -82,8 +76,6 @@ object FrmCadCargos: TFrmCadCargos
         Caption = 'Remover'
         TabOrder = 3
         OnClick = BtnRemoverClick
-        ExplicitLeft = 251
-        ExplicitTop = 120
       end
     end
     object TsRegistro: TTabSheet

@@ -2,8 +2,8 @@ object FrmCadFuncionarios: TFrmCadFuncionarios
   Left = 0
   Top = 0
   Caption = 'Funcionarios'
-  ClientHeight = 437
-  ClientWidth = 682
+  ClientHeight = 435
+  ClientWidth = 662
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -14,26 +14,30 @@ object FrmCadFuncionarios: TFrmCadFuncionarios
   OnCreate = FormCreate
   OnDestroy = FormDestroy
   DesignSize = (
-    682
-    437)
+    662
+    435)
   PixelsPerInch = 96
   TextHeight = 13
   object PageControl: TPageControl
     Left = 8
     Top = 8
-    Width = 666
-    Height = 421
+    Width = 646
+    Height = 419
     ActivePage = TsRegistro
     Anchors = [akLeft, akTop, akRight, akBottom]
     TabOrder = 0
     OnChange = PageControlChange
     object TsLista: TTabSheet
       Caption = 'Lista'
+      DesignSize = (
+        638
+        391)
       object DBGrid1: TDBGrid
-        Left = 0
-        Top = 3
-        Width = 542
-        Height = 287
+        Left = 6
+        Top = 0
+        Width = 629
+        Height = 357
+        Anchors = [akLeft, akTop, akRight, akBottom]
         DataSource = DtsFuncionarios
         ReadOnly = True
         TabOrder = 0
@@ -45,58 +49,61 @@ object FrmCadFuncionarios: TFrmCadFuncionarios
       end
       object Adicionar: TButton
         Left = 0
-        Top = 296
+        Top = 363
         Width = 75
         Height = 25
+        Anchors = [akLeft, akBottom]
         Caption = 'Adicionar'
         TabOrder = 1
         OnClick = AdicionarClick
       end
-      object Editar: TButton
+      object BtnEditar: TButton
         Left = 81
-        Top = 296
+        Top = 363
         Width = 75
         Height = 25
+        Anchors = [akLeft, akBottom]
         Caption = 'Editar'
         TabOrder = 2
-        OnClick = EditarClick
+        OnClick = BtnEditarClick
       end
-      object Remover: TButton
+      object BtnRemover: TButton
         Left = 162
-        Top = 296
+        Top = 363
         Width = 75
         Height = 25
+        Anchors = [akLeft, akBottom]
         Caption = 'Remover'
         TabOrder = 3
-        OnClick = RemoverClick
+        OnClick = BtnRemoverClick
       end
     end
     object TsRegistro: TTabSheet
       Caption = 'Registro'
       ImageIndex = 1
-      object Label1: TLabel
+      object LblCodigo: TLabel
         Left = 3
         Top = 8
         Width = 33
         Height = 13
         Caption = 'C'#243'digo'
       end
-      object Label2: TLabel
+      object LblNome: TLabel
         Left = 3
         Top = 50
         Width = 27
         Height = 13
         Caption = 'Nome'
-        FocusControl = DBEdit2
+        FocusControl = EdtNome
       end
-      object Label3: TLabel
+      object LblNasc: TLabel
         Left = 432
         Top = 48
         Width = 55
         Height = 13
         Caption = 'Nascimento'
       end
-      object Label4: TLabel
+      object LblCargo: TLabel
         Left = 432
         Top = 114
         Width = 29
@@ -109,24 +116,24 @@ object FrmCadFuncionarios: TFrmCadFuncionarios
         Width = 39
         Height = 13
         Caption = 'Contato'
-        FocusControl = DBEdit5
+        FocusControl = EdtContato
       end
-      object Label6: TLabel
+      object LblEmail: TLabel
         Left = 3
         Top = 184
         Width = 24
         Height = 13
         Caption = 'Email'
-        FocusControl = DBEdit6
+        FocusControl = EdtEmail
       end
-      object Label7: TLabel
+      object LblAtivo: TLabel
         Left = 432
         Top = 184
         Width = 25
         Height = 13
         Caption = 'Ativo'
       end
-      object DBText1: TDBText
+      object TxtCodigo: TDBText
         Left = 3
         Top = 27
         Width = 65
@@ -140,28 +147,28 @@ object FrmCadFuncionarios: TFrmCadFuncionarios
         Width = 37
         Height = 13
         Caption = 'Sal'#225'rios'
-        FocusControl = DBEdit6
+        FocusControl = EdtEmail
       end
-      object Confirmar: TButton
+      object BtnConfirmar: TButton
         Left = 432
         Top = 352
         Width = 75
         Height = 25
         Caption = 'Confirmar'
         TabOrder = 0
-        OnClick = ConfirmarClick
+        OnClick = BtnConfirmarClick
       end
-      object Cancelar: TButton
+      object BtnCancelar: TButton
         Left = 533
         Top = 352
         Width = 75
         Height = 25
         Caption = 'Cancelar'
         TabOrder = 3
-        OnClick = CancelarClick
+        OnClick = BtnCancelarClick
       end
-      object DBEdit2: TDBEdit
-        Left = 3
+      object EdtNome: TDBEdit
+        Left = 2
         Top = 69
         Width = 334
         Height = 21
@@ -169,7 +176,7 @@ object FrmCadFuncionarios: TFrmCadFuncionarios
         DataSource = DtsFuncionarios
         TabOrder = 4
       end
-      object DBEdit5: TDBEdit
+      object EdtContato: TDBEdit
         Left = 3
         Top = 133
         Width = 334
@@ -178,7 +185,7 @@ object FrmCadFuncionarios: TFrmCadFuncionarios
         DataSource = DtsFuncionarios
         TabOrder = 2
       end
-      object DBEdit6: TDBEdit
+      object EdtEmail: TDBEdit
         Left = 2
         Top = 203
         Width = 334
@@ -187,7 +194,7 @@ object FrmCadFuncionarios: TFrmCadFuncionarios
         DataSource = DtsFuncionarios
         TabOrder = 5
       end
-      object DBRadioGroup1: TDBRadioGroup
+      object RgAtivo: TDBRadioGroup
         Left = 430
         Top = 203
         Width = 187
@@ -203,7 +210,7 @@ object FrmCadFuncionarios: TFrmCadFuncionarios
           '1'
           '0')
       end
-      object DateTimePicker1: TDateTimePicker
+      object DtpNasc: TDateTimePicker
         Left = 430
         Top = 67
         Width = 187
@@ -212,7 +219,7 @@ object FrmCadFuncionarios: TFrmCadFuncionarios
         Time = 0.982635381944419400
         TabOrder = 1
       end
-      object DBLookupComboBox1: TDBLookupComboBox
+      object LcbCargo: TDBLookupComboBox
         Left = 430
         Top = 133
         Width = 187
@@ -266,7 +273,8 @@ object FrmCadFuncionarios: TFrmCadFuncionarios
     OnCalcFields = QueryFuncionariosCalcFields
     Connection = DM.Connection
     SQL.Strings = (
-      'SELECT * FROM FUNCIONARIOS')
+      'SELECT * FROM FUNCIONARIOS'
+      'ORDER BY NOME ASC')
     Left = 132
     object QueryFuncionariosCODIGO: TIntegerField
       DisplayLabel = 'C'#243'digo'
@@ -364,14 +372,7 @@ object FrmCadFuncionarios: TFrmCadFuncionarios
       'SELECT * FROM FUNCIONARIO_SALARIO'
       'ORDER BY "DATA" DESC')
     Left = 296
-    object QuerySalariosCODIGO: TIntegerField
-      DisplayLabel = 'C'#243'digo'
-      DisplayWidth = 5
-      FieldName = 'CODIGO'
-      Origin = 'CODIGO'
-      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
-      Required = True
-    end
+    Top = 8
     object QuerySalariosFUNCIONARIO_COD: TIntegerField
       FieldName = 'FUNCIONARIO_COD'
       Origin = 'FUNCIONARIO_COD'
