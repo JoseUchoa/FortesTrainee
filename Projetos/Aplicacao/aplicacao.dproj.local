@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2021/11/16 18:04:21.000.466,=C:\Users\joseg\Documents\GitHub\FortesTrainee\Projetos\Unit1.pas</Transaction>
+    <Transaction>2021/11/16 18:04:33.000.449,C:\Users\joseg\Documents\GitHub\FortesTrainee\Projetos\Unit1.pas=C:\Users\joseg\Documents\GitHub\FortesTrainee\Projetos\Aplicação\Principal.pas</Transaction>
+    <Transaction>2021/11/16 18:04:33.000.449,C:\Users\joseg\Documents\GitHub\FortesTrainee\Projetos\Unit1.dfm=C:\Users\joseg\Documents\GitHub\FortesTrainee\Projetos\Aplicação\Principal.dfm</Transaction>
+    <Transaction>2021/11/16 18:04:51.000.156,=C:\Users\joseg\Documents\GitHub\FortesTrainee\Projetos\Unit1.pas</Transaction>
+    <Transaction>2021/11/16 18:09:11.000.602,C:\Users\joseg\Documents\GitHub\FortesTrainee\Projetos\Unit1.pas=C:\Users\joseg\Documents\GitHub\FortesTrainee\Projetos\Aplicação\Conexao.pas</Transaction>
+    <Transaction>2021/11/16 18:09:11.000.602,C:\Users\joseg\Documents\GitHub\FortesTrainee\Projetos\Unit1.dfm=C:\Users\joseg\Documents\GitHub\FortesTrainee\Projetos\Aplicação\Conexao.dfm</Transaction>
+    <Transaction>2021/11/16 19:01:58.000.426,C:\Users\joseg\Documents\GitHub\FortesTrainee\Projetos\Project1.dproj=C:\Users\joseg\Documents\GitHub\FortesTrainee\Projetos\Aplicação\aplicacao.dproj</Transaction>
+    <Transaction>2021/11/19 14:04:34.000.425,=C:\Users\joseg\Documents\GitHub\FortesTrainee\Projetos\Aplicação\Unit2.pas</Transaction>
+    <Transaction>2021/11/19 14:04:46.000.761,C:\Users\joseg\Documents\GitHub\FortesTrainee\Projetos\Aplicação\Cadastros\CadastroCargos.pas=C:\Users\joseg\Documents\GitHub\FortesTrainee\Projetos\Aplicação\Unit2.pas</Transaction>
+    <Transaction>2021/11/19 14:04:46.000.761,C:\Users\joseg\Documents\GitHub\FortesTrainee\Projetos\Aplicação\Cadastros\CadastroCargos.dfm=C:\Users\joseg\Documents\GitHub\FortesTrainee\Projetos\Aplicação\Unit2.dfm</Transaction>
+    <Transaction>2021/11/19 20:12:25.000.899,C:\Users\joseg\Documents\GitHub\FortesTrainee\Projetos\Aplicação\CadastroCargos.dfm=C:\Users\joseg\Documents\GitHub\FortesTrainee\Projetos\Aplicação\Cadastros\CadastroCargos.dfm</Transaction>
+    <Transaction>2021/11/19 20:12:25.000.899,C:\Users\joseg\Documents\GitHub\FortesTrainee\Projetos\Aplicação\CadastroCargos.pas=C:\Users\joseg\Documents\GitHub\FortesTrainee\Projetos\Aplicação\Cadastros\CadastroCargos.pas</Transaction>
+    <Transaction>2021/11/19 20:12:52.000.508,C:\Users\joseg\Documents\GitHub\FortesTrainee\Projetos\Aplicação\Cadastros\CadastroCargos.dfm=C:\Users\joseg\Documents\GitHub\FortesTrainee\Projetos\Aplicação\CadastroCargos.dfm</Transaction>
+    <Transaction>2021/11/19 20:12:52.000.508,C:\Users\joseg\Documents\GitHub\FortesTrainee\Projetos\Aplicação\Cadastros\CadastroCargos.pas=C:\Users\joseg\Documents\GitHub\FortesTrainee\Projetos\Aplicação\CadastroCargos.pas</Transaction>
+    <Transaction>2021/11/19 20:33:27.000.979,=C:\Users\joseg\Documents\GitHub\FortesTrainee\Projetos\Aplicação\Unit2.pas</Transaction>
+    <Transaction>2021/11/19 20:33:46.000.138,=C:\Users\joseg\Documents\GitHub\FortesTrainee\Projetos\Aplicação\Unit2.pas</Transaction>
+    <Transaction>2021/11/19 20:33:57.000.111,C:\Users\joseg\Documents\GitHub\FortesTrainee\Projetos\Aplicação\Unit2.dfm=C:\Users\joseg\Documents\GitHub\FortesTrainee\Projetos\Aplicação\Cadastros\CadastroEventos.dfm</Transaction>
+    <Transaction>2021/11/19 20:33:57.000.111,C:\Users\joseg\Documents\GitHub\FortesTrainee\Projetos\Aplicação\Unit2.pas=C:\Users\joseg\Documents\GitHub\FortesTrainee\Projetos\Aplicação\Cadastros\CadastroEventos.pas</Transaction>
+    <Transaction>2021/11/19 20:34:15.000.185,=C:\Users\joseg\Documents\GitHub\FortesTrainee\Projetos\Aplicação\Unit2.pas</Transaction>
+    <Transaction>2021/11/19 20:34:29.000.548,C:\Users\joseg\Documents\GitHub\FortesTrainee\Projetos\Aplicação\Unit2.pas=C:\Users\joseg\Documents\GitHub\FortesTrainee\Projetos\Aplicação\Cadastros\CadastroFuncionarios.pas</Transaction>
+    <Transaction>2021/11/19 20:34:29.000.548,C:\Users\joseg\Documents\GitHub\FortesTrainee\Projetos\Aplicação\Unit2.dfm=C:\Users\joseg\Documents\GitHub\FortesTrainee\Projetos\Aplicação\Cadastros\CadastroFuncionarios.dfm</Transaction>
+    <Transaction>2021/12/01 11:26:51.000.407,=C:\Users\joseg\OneDrive\Documentos\Github\FortesTrainee\Projetos\Aplicação\Unit2.pas</Transaction>
+    <Transaction>2021/12/01 11:27:11.000.428,C:\Users\joseg\OneDrive\Documentos\Github\FortesTrainee\Projetos\Aplicação\Processos\ProcLancarEventos.pas=C:\Users\joseg\OneDrive\Documentos\Github\FortesTrainee\Projetos\Aplicação\Unit2.pas</Transaction>
+    <Transaction>2021/12/01 11:27:11.000.428,C:\Users\joseg\OneDrive\Documentos\Github\FortesTrainee\Projetos\Aplicação\Processos\ProcLancarEventos.dfm=C:\Users\joseg\OneDrive\Documentos\Github\FortesTrainee\Projetos\Aplicação\Unit2.dfm</Transaction>
+  </Transactions>
+</BorlandProject>
