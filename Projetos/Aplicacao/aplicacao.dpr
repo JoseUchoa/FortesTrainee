@@ -7,7 +7,9 @@ uses
   CadastroCargos in 'Cadastros\CadastroCargos.pas' {FrmCadCargos},
   CadastroEventos in 'Cadastros\CadastroEventos.pas' {FrmCadEventos},
   CadastroFuncionarios in 'Cadastros\CadastroFuncionarios.pas' {FrmCadFuncionarios},
-  ProcLancarEventos in 'Processos\ProcLancarEventos.pas' {FrmLancarEventos};
+  ProcLancarEventos in 'Processos\ProcLancarEventos.pas' {FrmLancarEventos},
+  ProcMudarSalarios in 'Processos\ProcMudarSalarios.pas' {FrmMudarSalarios},
+  ProcFolhaDePagamentos in 'Processos\ProcFolhaDePagamentos.pas' {FrmFolhaDePagamentos};
 
 {$R *.res}
 

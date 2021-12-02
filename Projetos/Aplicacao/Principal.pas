@@ -42,13 +42,14 @@ type
     MudanadeSalrios1: TMenuItem;
     MudanadeSalrios2: TMenuItem;
     Folhadepagamento1: TMenuItem;
-    Folhadepagamento2: TMenuItem;
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
     procedure CargosClick(Sender: TObject);
     procedure EventosClick(Sender: TObject);
     procedure FuncionariosClick(Sender: TObject);
     procedure MudanadeSalrios2Click(Sender: TObject);
+    procedure MudanadeSalrios1Click(Sender: TObject);
+    procedure Folhadepagamento1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -62,7 +63,7 @@ implementation
 
 uses
   Conexao, CadastroCargos, CadastroEventos, CadastroFuncionarios,
-  ProcLancarEventos;
+  ProcLancarEventos, ProcMudarSalarios, ProcFolhaDePagamentos;
 
 {$R *.dfm}
 
@@ -89,11 +90,25 @@ begin
 
 end;
 
+procedure TFormPrincipal.MudanadeSalrios1Click(Sender: TObject);
+begin
+  FrmMudarSalarios := TFrmMudarSalarios.Create(Self);
+  FrmMudarSalarios.ShowModal;
+  FrmMudarSalarios.Free;
+end;
+
 procedure TFormPrincipal.MudanadeSalrios2Click(Sender: TObject);
 begin
   FrmLancarEventos := TFrmLancarEventos.Create(Self);
   FrmLancarEventos.ShowModal;
   FrmLancarEventos.Free;
+end;
+
+procedure TFormPrincipal.Folhadepagamento1Click(Sender: TObject);
+begin
+  FrmFolhaDePagamentos := TFrmFolhaDePagamentos.Create(Self);
+  FrmFolhaDePagamentos.ShowModal;
+  FrmFolhaDePagamentos.Free;
 end;
 
 procedure TFormPrincipal.FormCreate(Sender: TObject);

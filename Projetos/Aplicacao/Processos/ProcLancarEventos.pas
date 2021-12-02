@@ -37,6 +37,7 @@ type
     LblValor: TLabel;
     QryFuncionariosSelecionados: TFDQuery;
     QryAux: TFDQuery;
+    procedure ClearFormFields;
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
     procedure LcbFuncionariosClick(Sender: TObject);
@@ -56,13 +57,19 @@ implementation
 
 {$R *.dfm}
 
-procedure TFrmLancarEventos.BtnCancelarClick(Sender: TObject);
+procedure TFrmLancarEventos.ClearFormFields;
 begin
   EdtMesAno.Clear;
   LcbCargos.KeyValue := Null;
   LcbFuncionarios.KeyValue := Null;
   LcbEventos.KeyValue := Null;
   EdtValor.Clear;
+  QryFuncionariosSelecionados.Close;
+end;
+
+procedure TFrmLancarEventos.BtnCancelarClick(Sender: TObject);
+begin
+  ClearFormFields;
 end;
 
 procedure TFrmLancarEventos.BtnConfirmarClick(Sender: TObject);
@@ -99,7 +106,7 @@ begin
   end;
 
   QryFuncionariosSelecionados.Close;
-  QryFuncionariosSelecionados.SQL.Text := 'SELECT CODIGO, NOME FROM FUNCIONARIOS WHERE ATIVO = 1';
+  QryFuncionariosSelecionados.SQL.Text := 'SELECT CODIGO FROM FUNCIONARIOS WHERE ATIVO = 1';
   if LcbCargos.KeyValue <> Null then
     QryFuncionariosSelecionados.SQL.Text := QryFuncionariosSelecionados.SQL.Text
       + 'AND CARGO = ' + VarToStr(lcbCargos.KeyValue)
@@ -122,6 +129,9 @@ begin
     QryFuncionariosSelecionados.Next;
   end;
 
+  ClearFormFields;
+  if not QryFuncionariosSelecionados.IsEmpty then
+    ShowMessage('Evento processado');
 end;
 
 procedure TFrmLancarEventos.FormCreate(Sender: TObject);

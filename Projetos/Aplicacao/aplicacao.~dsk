@@ -1,32 +1,40 @@
 ﻿[Closed Files]
-File_0=TSourceModule,'C:\Users\joseg\OneDrive\Documentos\Github\FortesTrainee\Projetos\Aplicação\Principal.pas',0,1,55,3,65,0,0,,
-File_1=TSourceModule,'C:\Users\joseg\OneDrive\Documentos\Github\FortesTrainee\Projetos\Aplicação\Cadastros\CadastroEventos.pas',0,1,1,1,1,0,0,,
-File_2=TSourceModule,'C:\Users\joseg\OneDrive\Documentos\Github\FortesTrainee\Projetos\Aplicação\Cadastros\CadastroCargos.pas',0,1,1,1,1,0,0,,
-File_3=TSourceModule,'c:\program files (x86)\embarcadero\studio\21.0\SOURCE\RTL\SYS\System.SysUtils.pas',0,1,1653,14,1667,0,0,,
-File_4=TSourceModule,'C:\Users\joseg\Documents\GitHub\FortesTrainee\Projetos\Aplicação\DB.pas',0,1,1,1,1,0,0,,
+File_0=TSourceModule,'C:\Users\joseg\OneDrive\Documentos\Github\FortesTrainee\Projetos\Aplicacao\Cadastros\CadastroFuncionarios.pas',0,1,145,29,159,0,0,,
+File_1=TSourceModule,'C:\Users\joseg\OneDrive\Documentos\Github\FortesTrainee\Projetos\Aplicacao\Cadastros\CadastroEventos.pas',0,1,1,1,1,0,0,,
+File_2=TSourceModule,'C:\Users\joseg\OneDrive\Documentos\Github\FortesTrainee\Projetos\Aplicacao\Cadastros\CadastroCargos.pas',0,1,1,41,10,0,0,,
+File_3=TSourceModule,'C:\Users\joseg\OneDrive\Documentos\Github\FortesTrainee\Projetos\Aplicação\Principal.pas',0,1,55,3,65,0,0,,
+File_4=TSourceModule,'C:\Users\joseg\OneDrive\Documentos\Github\FortesTrainee\Projetos\Aplicação\Cadastros\CadastroEventos.pas',0,1,1,1,1,0,0,,
+File_5=TSourceModule,'C:\Users\joseg\OneDrive\Documentos\Github\FortesTrainee\Projetos\Aplicação\Cadastros\CadastroCargos.pas',0,1,1,1,1,0,0,,
+File_6=TSourceModule,'c:\program files (x86)\embarcadero\studio\21.0\SOURCE\RTL\SYS\System.SysUtils.pas',0,1,1653,14,1667,0,0,,
+File_7=TSourceModule,'C:\Users\joseg\Documents\GitHub\FortesTrainee\Projetos\Aplicação\DB.pas',0,1,1,1,1,0,0,,
 
 [Modules]
-Module0=C:\Users\joseg\OneDrive\Documentos\Github\FortesTrainee\Projetos\Aplicação\Conexao.pas
-Module1=C:\Users\joseg\OneDrive\Documentos\Github\FortesTrainee\Projetos\Aplicação\Cadastros\CadastroFuncionarios.pas
-Module2=C:\Users\joseg\OneDrive\Documentos\Github\FortesTrainee\Projetos\Aplicação\Processos\ProcLancarEventos.pas
-Count=3
+Module0=C:\Users\joseg\OneDrive\Documentos\Github\FortesTrainee\Projetos\Aplicacao\Principal.pas
+Module1=C:\Users\joseg\OneDrive\Documentos\Github\FortesTrainee\Projetos\Aplicacao\Processos\ProcFolhaDePagamentos.pas
+Module2=C:\Users\joseg\OneDrive\Documentos\Github\FortesTrainee\Projetos\Aplicacao\Processos\ProcMudarSalarios.pas
+Module3=C:\Users\joseg\OneDrive\Documentos\Github\FortesTrainee\Projetos\Aplicacao\Processos\ProcLancarEventos.pas
+Count=4
 EditWindowCount=1
 
-[C:\Users\joseg\OneDrive\Documentos\Github\FortesTrainee\Projetos\Aplicação\Conexao.pas]
+[C:\Users\joseg\OneDrive\Documentos\Github\FortesTrainee\Projetos\Aplicacao\Principal.pas]
 ModuleType=TSourceModule
 
-[C:\Users\joseg\OneDrive\Documentos\Github\FortesTrainee\Projetos\Aplicação\Cadastros\CadastroFuncionarios.pas]
+[C:\Users\joseg\OneDrive\Documentos\Github\FortesTrainee\Projetos\Aplicacao\Processos\ProcFolhaDePagamentos.pas]
 ModuleType=TSourceModule
 
-[C:\Users\joseg\OneDrive\Documentos\Github\FortesTrainee\Projetos\Aplicação\Processos\ProcLancarEventos.pas]
+[C:\Users\joseg\OneDrive\Documentos\Github\FortesTrainee\Projetos\Aplicacao\Processos\ProcMudarSalarios.pas]
+ModuleType=TSourceModule
+
+[C:\Users\joseg\OneDrive\Documentos\Github\FortesTrainee\Projetos\Aplicacao\Processos\ProcLancarEventos.pas]
 ModuleType=TSourceModule
 
 [EditWindow0]
-ViewCount=3
-CurrentEditView=C:\Users\joseg\OneDrive\Documentos\Github\FortesTrainee\Projetos\Aplicação\Conexao.pas
+ViewCount=4
+CurrentEditView=C:\Users\joseg\OneDrive\Documentos\Github\FortesTrainee\Projetos\Aplicacao\Principal.pas
 View0=0
 View1=1
 View2=2
+View3=3
 PercentageSizes=1
 Create=1
 Visible=1
@@ -45,7 +53,7 @@ BorlandEditorCodeExplorer=BorlandEditorCodeExplorer@EditWindow0
 TopPanelSize=0
 LeftPanelSize=1895
 LeftPanelClients=PropertyInspector,DockSite3
-LeftPanelData=0000080001010100000009000000446F636B536974653350120000000000000167070000000000000100000000550E000009000000446F636B536974653301000000008D2000001100000050726F7065727479496E73706563746F72FFFFFFFF
+LeftPanelData=0000080001010000000050120000000000000167070000000000000100000000550E000009000000446F636B536974653301000000008D2000001100000050726F7065727479496E73706563746F72FFFFFFFF
 RightPanelSize=1999
 RightPanelClients=DockSite2,DockSite4
 RightPanelData=00000800010100000000501200000000000001CF0700000000000001000000004412000009000000446F636B536974653201000000008D20000009000000446F636B5369746534FFFFFFFF
@@ -58,36 +66,47 @@ BottomMiddelPanelData=0000080001020200000009000000446F636B5369746530100000004772
 
 [View0]
 CustomEditViewType=TEditView
-Module=C:\Users\joseg\OneDrive\Documentos\Github\FortesTrainee\Projetos\Aplicação\Processos\ProcLancarEventos.pas
-CursorX=1
-CursorY=1
-TopLine=1
-LeftCol=1
-Elisions=
-Bookmarks=
-EditViewName=C:\Users\joseg\OneDrive\Documentos\Github\FortesTrainee\Projetos\Aplicação\Processos\ProcLancarEventos.pas
-
-[View1]
-CustomEditViewType=TEditView
-Module=C:\Users\joseg\OneDrive\Documentos\Github\FortesTrainee\Projetos\Aplicação\Cadastros\CadastroFuncionarios.pas
-CursorX=42
-CursorY=115
-TopLine=88
+Module=C:\Users\joseg\OneDrive\Documentos\Github\FortesTrainee\Projetos\Aplicacao\Processos\ProcLancarEventos.pas
+CursorX=12
+CursorY=65
+TopLine=47
 LeftCol=1
 Elisions=
 Bookmarks=
 EditViewName=Borland.FormDesignerView
 
-[View2]
+[View1]
 CustomEditViewType=TEditView
-Module=C:\Users\joseg\OneDrive\Documentos\Github\FortesTrainee\Projetos\Aplicação\Conexao.pas
-CursorX=54
-CursorY=37
-TopLine=19
+Module=C:\Users\joseg\OneDrive\Documentos\Github\FortesTrainee\Projetos\Aplicacao\Principal.pas
+CursorX=23
+CursorY=111
+TopLine=83
 LeftCol=1
 Elisions=
 Bookmarks=
-EditViewName=C:\Users\joseg\OneDrive\Documentos\Github\FortesTrainee\Projetos\Aplicação\Conexao.pas
+EditViewName=C:\Users\joseg\OneDrive\Documentos\Github\FortesTrainee\Projetos\Aplicacao\Principal.pas
+
+[View2]
+CustomEditViewType=TEditView
+Module=C:\Users\joseg\OneDrive\Documentos\Github\FortesTrainee\Projetos\Aplicacao\Processos\ProcMudarSalarios.pas
+CursorX=19
+CursorY=18
+TopLine=1
+LeftCol=1
+Elisions=
+Bookmarks=
+EditViewName=C:\Users\joseg\OneDrive\Documentos\Github\FortesTrainee\Projetos\Aplicacao\Processos\ProcMudarSalarios.pas
+
+[View3]
+CustomEditViewType=TEditView
+Module=C:\Users\joseg\OneDrive\Documentos\Github\FortesTrainee\Projetos\Aplicacao\Processos\ProcFolhaDePagamentos.pas
+CursorX=3
+CursorY=18
+TopLine=4
+LeftCol=1
+Elisions=
+Bookmarks=
+EditViewName=C:\Users\joseg\OneDrive\Documentos\Github\FortesTrainee\Projetos\Aplicacao\Processos\ProcFolhaDePagamentos.pas
 
 [Watches]
 Count=0
@@ -206,13 +225,13 @@ Visible=1
 Docked=1
 State=0
 Left=0
-Top=28
+Top=345
 Width=1895
-Height=8398
+Height=4551
 MaxLeft=-1
 MaxTop=-1
 ClientWidth=1895
-ClientHeight=8398
+ClientHeight=4551
 TBDockHeight=9017
 LRDockWidth=1895
 Dockable=1
@@ -221,8 +240,8 @@ SplitPos=111
 
 [PropInspDesignerSelection]
 ArrangeBy=Name
-SelectedItem=Connected,
-ExpandedItems="LiveBindings Designer=0",Anchors=0,BorderIcons=0,Constraints=0,CustomTitleBar=0,Font=0,ActiveStoredUsage=0,Connection=0,FetchOptions=0,FieldOptions=0,FilterChanges=0,FilterOptions=0,FormatOptions=0,ConnectedStoredUsage=0,Params=0,ResourceOptions=0,Transaction=0,TxOptions=0,UpdateOptions=0
+SelectedItem=Action,
+ExpandedItems=Anchors=0,BorderIcons=0
 
 [frmDesignPreview]
 PercentageSizes=1
@@ -668,7 +687,7 @@ HostDockSite=DockLeftPanel
 DockSiteType=1
 PercentageSizes=1
 Create=1
-Visible=0
+Visible=1
 Docked=1
 State=0
 Left=0

@@ -23,7 +23,7 @@ object FrmCadFuncionarios: TFrmCadFuncionarios
     Top = 8
     Width = 646
     Height = 419
-    ActivePage = TsLista
+    ActivePage = TsRegistro
     Anchors = [akLeft, akTop, akRight, akBottom]
     TabOrder = 0
     OnChange = PageControlChange
@@ -364,31 +364,31 @@ object FrmCadFuncionarios: TFrmCadFuncionarios
     Top = 56
   end
   object QuerySalarios: TFDQuery
-    IndexFieldNames = 'FUNCIONARIO_COD'
+    IndexFieldNames = 'COD_FUNCIONARIO'
     MasterSource = DtsFuncionarios
     MasterFields = 'CODIGO'
     Connection = DM.Connection
     SQL.Strings = (
-      'SELECT * FROM FUNCIONARIO_SALARIO'
-      'ORDER BY "DATA" DESC')
+      'SELECT * FROM FUNCIONARIOS_SALARIOS'
+      'ORDER BY DATA_HORA DESC')
     Left = 304
     Top = 8
-    object QuerySalariosFUNCIONARIO_COD: TIntegerField
-      FieldName = 'FUNCIONARIO_COD'
-      Origin = 'FUNCIONARIO_COD'
+    object QuerySalariosDATA_HORA: TDateField
+      FieldName = 'DATA_HORA'
+      Origin = 'DATA_HORA'
       Required = True
-      Visible = False
     end
-    object QuerySalariosSALARIO: TIntegerField
-      DisplayLabel = 'Sal'#225'rio'
+    object QuerySalariosCOD_FUNCIONARIO: TIntegerField
+      FieldName = 'COD_FUNCIONARIO'
+      Origin = 'COD_FUNCIONARIO'
+      Required = True
+    end
+    object QuerySalariosSALARIO: TFMTBCDField
       FieldName = 'SALARIO'
       Origin = 'SALARIO'
       Required = True
-    end
-    object QuerySalariosDATA: TDateField
-      DisplayLabel = 'Data'
-      FieldName = 'DATA'
-      Origin = '"DATA"'
+      Precision = 18
+      Size = 2
     end
   end
   object DtsSalarios: TDataSource

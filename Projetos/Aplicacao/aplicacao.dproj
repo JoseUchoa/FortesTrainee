@@ -127,6 +127,14 @@
             <Form>FrmLancarEventos</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="Processos\ProcMudarSalarios.pas">
+            <Form>FrmMudarSalarios</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="Processos\ProcFolhaDePagamentos.pas">
+            <Form>FrmFolhaDePagamentos</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

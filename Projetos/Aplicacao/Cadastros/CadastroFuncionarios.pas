@@ -56,10 +56,10 @@ type
     EdtSalario: TEdit;
     LblSalario: TLabel;
     QuerySalarios: TFDQuery;
-    QuerySalariosFUNCIONARIO_COD: TIntegerField;
-    QuerySalariosSALARIO: TIntegerField;
-    QuerySalariosDATA: TDateField;
     DtsSalarios: TDataSource;
+    QuerySalariosDATA_HORA: TDateField;
+    QuerySalariosCOD_FUNCIONARIO: TIntegerField;
+    QuerySalariosSALARIO: TFMTBCDField;
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
     procedure AdicionarClick(Sender: TObject);
@@ -160,8 +160,8 @@ begin
     if Salario > 0 then
     begin
       QuerySalarios.Append;
-      QuerySalariosFUNCIONARIO_COD.Value := MaiorFuncCod;
-      QuerySalariosDATA.AsDateTime := Now;
+      QuerySalariosCOD_FUNCIONARIO.Value := MaiorFuncCod;
+      QuerySalariosDATA_HORA.AsDateTime := Now;
       QuerySalariosSALARIO.AsCurrency := Salario;
       QuerySalarios.Post;
       QuerySalarios.Refresh;

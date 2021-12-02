@@ -53,6 +53,7 @@ object FormPrincipal: TFormPrincipal
       Caption = 'Processos'
       object MudanadeSalrios1: TMenuItem
         Caption = 'Mudan'#231'a de sal'#225'rio(s)'
+        OnClick = MudanadeSalrios1Click
       end
       object MudanadeSalrios2: TMenuItem
         Caption = 'Lan'#231'ar evento para funcionario(s)'
@@ -60,9 +61,7 @@ object FormPrincipal: TFormPrincipal
       end
       object Folhadepagamento1: TMenuItem
         Caption = 'Folha de pagamento'
-      end
-      object Folhadepagamento2: TMenuItem
-        Caption = 'Folha de pagamento'
+        OnClick = Folhadepagamento1Click
       end
     end
     object Relatrios1: TMenuItem
