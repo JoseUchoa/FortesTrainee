@@ -109,10 +109,10 @@ begin
   QryFuncionariosSelecionados.SQL.Text := 'SELECT CODIGO FROM FUNCIONARIOS WHERE ATIVO = 1';
   if LcbCargos.KeyValue <> Null then
     QryFuncionariosSelecionados.SQL.Text := QryFuncionariosSelecionados.SQL.Text
-      + 'AND CARGO = ' + VarToStr(lcbCargos.KeyValue)
+      + 'AND f.CARGO = ' + VarToStr(lcbCargos.KeyValue)
   else
     QryFuncionariosSelecionados.SQL.Text := QryFuncionariosSelecionados.SQL.Text
-      + 'AND CODIGO = ' + VarToStr(LcbFuncionarios.KeyValue);
+      + 'AND f.CODIGO = ' + VarToStr(LcbFuncionarios.KeyValue);
   QryFuncionariosSelecionados.Open;
 
   while not QryFuncionariosSelecionados.Eof do

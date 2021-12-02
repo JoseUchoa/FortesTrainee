@@ -1,0 +1,146 @@
+unit ProcMudarSalarios;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs,Conexao, FireDAC.Stan.Intf,
+  FireDAC.Stan.Option, FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS,
+  FireDAC.Phys.Intf, FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt,
+  Data.DB, FireDAC.Comp.DataSet, FireDAC.Comp.Client, Vcl.StdCtrls, Vcl.DBCtrls,
+  Vcl.Mask;
+
+type
+  TFrmMudarSalarios = class(TForm)
+    LblFuncionarios: TLabel;
+    LblCargos: TLabel;
+    LblPercentual: TLabel;
+    LcbCargos: TDBLookupComboBox;
+    LcbFuncionarios: TDBLookupComboBox;
+    BtnConfirmar: TButton;
+    BtnCancelar: TButton;
+    EdtPercentual: TEdit;
+    DtsFuncionarios: TDataSource;
+    DtsCargos: TDataSource;
+    QryFuncionarios: TFDQuery;
+    QryFuncionariosCODIGO: TIntegerField;
+    QryFuncionariosNOME: TStringField;
+    QryCargos: TFDQuery;
+    QryCargosCODIGO: TIntegerField;
+    QryCargosNOME: TStringField;
+    QryFuncionariosSelecionados: TFDQuery;
+    QryAux: TFDQuery;
+    procedure ClearFormFields;
+    procedure LcbCargosClick(Sender: TObject);
+    procedure LcbFuncionariosClick(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+    procedure FormDestroy(Sender: TObject);
+    procedure BtnCancelarClick(Sender: TObject);
+    procedure BtnConfirmarClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FrmMudarSalarios: TFrmMudarSalarios;
+
+implementation
+
+{$R *.dfm}
+procedure TFrmMudarSalarios.ClearFormFields;
+begin
+  LcbCargos.KeyValue := Null;
+  LcbFuncionarios.KeyValue := Null;
+  EdtPercentual.Clear;
+  QryFuncionariosSelecionados.Close;
+end;
+
+procedure TFrmMudarSalarios.BtnConfirmarClick(Sender: TObject);
+begin
+
+  if (LcbCargos.KeyValue = Null) and (LcbFuncionarios.KeyValue = Null) then
+  begin
+    ShowMessage('O cargo ou funcionario é obrigatório.');
+    LcbCargos.SetFocus;
+    Exit;
+  end;
+
+  if StrToFloatDef(EdtPercentual.Text,0) <= 0 then
+  begin
+    ShowMessage('O percentual é obrigatório.');
+    EdtPercentual.SetFocus;
+    Exit;
+  end;
+  //todo: retirar - ter opção do usuário excluir a mudança de salário
+  QryAux.SQL.Text := 'DELETE FROM FUNCIONARIOS_SALARIOS WHERE DATA_HORA = :DATA_HORA';
+  QryAux.ParamByName('DATA_HORA').AsDateTime := Data;
+  QryAux.ExecSQL;
+
+  QryFuncionariosSelecionados.SQL.Text :=
+    'SELECT F.CODIGO, FS.SALARIO '+
+    'FROM FUNCIONARIOS F '+
+    'INNER JOIN FUNCIONARIOS_SALARIOS FS ON(FS.COD_FUNCIONARIO = F.CODIGO) '+
+    'WHERE F.ATIVO = 1 '+
+    'AND FS.DATA_HORA = (SELECT MAX(FS2.DATA_HORA) FROM FUNCIONARIOS_SALARIOS FS2 WHERE FS2.COD_FUNCIONARIO = F.CODIGO) ';
+
+  QryFuncionariosSelecionados.Close;
+  QryFuncionariosSelecionados.SQL.Text := 'SELECT CODIGO FROM FUNCIONARIOS WHERE ATIVO = 1';
+  if LcbCargos.KeyValue <> Null then
+    QryFuncionariosSelecionados.SQL.Text := QryFuncionariosSelecionados.SQL.Text
+      + 'AND CARGO = ' + VarToStr(lcbCargos.KeyValue)
+  else
+    QryFuncionariosSelecionados.SQL.Text := QryFuncionariosSelecionados.SQL.Text
+      + 'AND CODIGO = ' + VarToStr(LcbFuncionarios.KeyValue);
+  QryFuncionariosSelecionados.Open;
+
+//  while not QryFuncionariosSelecionados.Eof do
+//  begin
+//    QryAux.SQL.Text := 'UPDATE OR INSERT INTO FOLHAS_EVENTOS '
+//                        + 'VALUES(:MES_ANO, :COD_EVENTO, :COD_FUNCIONARIO, :VALOR) '
+//                        + 'MATCHING(MES_ANO, COD_EVENTO, COD_FUNCIONARIO) ';
+//
+//    QryAux.ParamByName('MES_ANO').AsString := EdtMesAno.Text;
+//    QryAux.ParamByName('COD_EVENTO').AsInteger := LcbEventos.KeyValue;
+//    QryAux.ParamByName('COD_FUNCIONARIO').AsInteger := QryFuncionariosSelecionados.FieldByName('CODIGO').AsInteger;
+//    QryAux.ParamByName('VALOR').AsCurrency:= StrToCurr(EdtValor.Text);
+//    QryAux.ExecSQL;
+//    QryFuncionariosSelecionados.Next;
+//  end;
+
+  ClearFormFields;
+  if not QryFuncionariosSelecionados.IsEmpty then
+    ShowMessage('Evento processado');
+
+
+end;
+
+procedure TFrmMudarSalarios.BtnCancelarClick(Sender: TObject);
+begin
+  ClearFormFields;
+end;
+
+procedure TFrmMudarSalarios.FormCreate(Sender: TObject);
+begin
+  QryCargos.Open;
+  QryFuncionarios.Open;
+end;
+
+procedure TFrmMudarSalarios.FormDestroy(Sender: TObject);
+begin
+  QryCargos.Close;
+  QryFuncionarios.Close;
+end;
+
+procedure TFrmMudarSalarios.LcbCargosClick(Sender: TObject);
+begin
+  LcbFuncionarios.KeyValue := Null;
+end;
+
+procedure TFrmMudarSalarios.LcbFuncionariosClick(Sender: TObject);
+begin
+  LcbCargos.KeyValue := Null;
+end;
+
+end.
