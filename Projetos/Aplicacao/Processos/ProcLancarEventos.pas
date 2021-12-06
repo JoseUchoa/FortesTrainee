@@ -130,8 +130,7 @@ begin
   end;
 
   ClearFormFields;
-  if not QryFuncionariosSelecionados.IsEmpty then
-    ShowMessage('Evento processado');
+  ShowMessage('Evento processado.');
 end;
 
 procedure TFrmLancarEventos.FormCreate(Sender: TObject);

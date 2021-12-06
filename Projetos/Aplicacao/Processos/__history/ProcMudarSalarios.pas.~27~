@@ -30,13 +30,16 @@ type
     QryCargosNOME: TStringField;
     QryFuncionariosSelecionados: TFDQuery;
     QryAux: TFDQuery;
+    BtnDesfazer: TButton;
     procedure ClearFormFields;
+    procedure DesfazerAlteracoes;
     procedure LcbCargosClick(Sender: TObject);
     procedure LcbFuncionariosClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
     procedure BtnCancelarClick(Sender: TObject);
     procedure BtnConfirmarClick(Sender: TObject);
+    procedure BtnDesfazerClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -57,9 +60,24 @@ begin
   QryFuncionariosSelecionados.Close;
 end;
 
-procedure TFrmMudarSalarios.BtnConfirmarClick(Sender: TObject);
+procedure TFrmMudarSalarios.DesfazerAlteracoes;
 begin
+  QryAux.SQL.Text :=
+    'DELETE FROM FUNCIONARIOS_SALARIOS ' +
+    'WHERE COD_FUNCIONARIO in ( ' +
+    '   SELECT fs.COD_FUNCIONARIO FROM FUNCIONARIOS_SALARIOS fs ' +
+    '   INNER JOIN FUNCIONARIOS f ON f.CODIGO = fs.COD_FUNCIONARIO ' +
+    '   WHERE f.ATIVO = 1 ' +
+    '   GROUP BY fs.COD_FUNCIONARIO HAVING COUNT(fs.COD_FUNCIONARIO) > 1 ' +
+    ') AND DATA_HORA = :DATA_HORA';
+  QryAux.ParamByName('DATA_HORA').AsDate := Now;
+  QryAux.ExecSQL;
+end;
 
+procedure TFrmMudarSalarios.BtnConfirmarClick(Sender: TObject);
+var
+  Data: TDateTime;
+begin
   if (LcbCargos.KeyValue = Null) and (LcbFuncionarios.KeyValue = Null) then
   begin
     ShowMessage('O cargo ou funcionario é obrigatório.');
@@ -73,47 +91,46 @@ begin
     EdtPercentual.SetFocus;
     Exit;
   end;
-  //todo: retirar - ter opção do usuário excluir a mudança de salário
-  QryAux.SQL.Text := 'DELETE FROM FUNCIONARIOS_SALARIOS WHERE DATA_HORA = :DATA_HORA';
-  QryAux.ParamByName('DATA_HORA').AsDateTime := Data;
-  QryAux.ExecSQL;
 
-  QryFuncionariosSelecionados.SQL.Text :=
-    'SELECT F.CODIGO, FS.SALARIO '+
-    'FROM FUNCIONARIOS F '+
-    'INNER JOIN FUNCIONARIOS_SALARIOS FS ON(FS.COD_FUNCIONARIO = F.CODIGO) '+
-    'WHERE F.ATIVO = 1 '+
-    'AND FS.DATA_HORA = (SELECT MAX(FS2.DATA_HORA) FROM FUNCIONARIOS_SALARIOS FS2 WHERE FS2.COD_FUNCIONARIO = F.CODIGO) ';
+  DesfazerAlteracoes;
 
   QryFuncionariosSelecionados.Close;
-  QryFuncionariosSelecionados.SQL.Text := 'SELECT CODIGO FROM FUNCIONARIOS WHERE ATIVO = 1';
+  QryFuncionariosSelecionados.SQL.Text :=
+    'SELECT fs.COD_FUNCIONARIO , fs.SALARIO FROM FUNCIONARIOS_SALARIOS fs ' +
+    'INNER JOIN FUNCIONARIOS f ON f.CODIGO = fs.COD_FUNCIONARIO ' +
+    'WHERE f.ATIVO = 1 ' +
+    'AND DATA_HORA = (SELECT MAX(fs2.DATA_HORA) FROM FUNCIONARIOS_SALARIOS fs2 WHERE fs2.COD_FUNCIONARIO = f.CODIGO)';
+
   if LcbCargos.KeyValue <> Null then
     QryFuncionariosSelecionados.SQL.Text := QryFuncionariosSelecionados.SQL.Text
-      + 'AND CARGO = ' + VarToStr(lcbCargos.KeyValue)
+      + 'AND f.CARGO = ' + VarToStr(lcbCargos.KeyValue)
   else
     QryFuncionariosSelecionados.SQL.Text := QryFuncionariosSelecionados.SQL.Text
-      + 'AND CODIGO = ' + VarToStr(LcbFuncionarios.KeyValue);
+      + 'AND f.CODIGO = ' + VarToStr(LcbFuncionarios.KeyValue);
   QryFuncionariosSelecionados.Open;
 
-//  while not QryFuncionariosSelecionados.Eof do
-//  begin
-//    QryAux.SQL.Text := 'UPDATE OR INSERT INTO FOLHAS_EVENTOS '
-//                        + 'VALUES(:MES_ANO, :COD_EVENTO, :COD_FUNCIONARIO, :VALOR) '
-//                        + 'MATCHING(MES_ANO, COD_EVENTO, COD_FUNCIONARIO) ';
-//
-//    QryAux.ParamByName('MES_ANO').AsString := EdtMesAno.Text;
-//    QryAux.ParamByName('COD_EVENTO').AsInteger := LcbEventos.KeyValue;
-//    QryAux.ParamByName('COD_FUNCIONARIO').AsInteger := QryFuncionariosSelecionados.FieldByName('CODIGO').AsInteger;
-//    QryAux.ParamByName('VALOR').AsCurrency:= StrToCurr(EdtValor.Text);
-//    QryAux.ExecSQL;
-//    QryFuncionariosSelecionados.Next;
-//  end;
+  while not QryFuncionariosSelecionados.Eof do
+  begin
+    QryAux.SQL.Text := 'INSERT INTO FUNCIONARIOS_SALARIOS(DATA_HORA, COD_FUNCIONARIO, SALARIO) '+
+                       'VALUES (:DATA_HORA, :COD_FUNCIONARIO, :SALARIO)';
+    QryAux.ParamByName('DATA_HORA').AsDate := Now;
+    QryAux.ParamByName('COD_FUNCIONARIO').AsInteger := QryFuncionariosSelecionados.FieldByName('COD_FUNCIONARIO').AsInteger;
+    QryAux.ParamByName('SALARIO').AsCurrency := QryFuncionariosSelecionados.FieldByName('SALARIO').AsCurrency * (1 + (StrToCurr(EdtPercentual.Text) / 100));
+    QryAux.ExecSQL;
+
+    QryFuncionariosSelecionados.Next;
+  end;
 
   ClearFormFields;
-  if not QryFuncionariosSelecionados.IsEmpty then
-    ShowMessage('Evento processado');
+  ShowMessage('Salarios alterados');
 
 
+end;
+
+procedure TFrmMudarSalarios.BtnDesfazerClick(Sender: TObject);
+begin
+  DesfazerAlteracoes;
+  ShowMessage('Alterações Desfeitas.');
 end;
 
 procedure TFrmMudarSalarios.BtnCancelarClick(Sender: TObject);

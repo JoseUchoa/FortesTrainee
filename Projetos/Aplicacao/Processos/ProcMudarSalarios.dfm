@@ -85,6 +85,15 @@ object FrmMudarSalarios: TFrmMudarSalarios
     Height = 21
     TabOrder = 2
   end
+  object BtnDesfazer: TButton
+    Left = 170
+    Top = 178
+    Width = 75
+    Height = 25
+    Caption = 'Desfazer'
+    TabOrder = 5
+    OnClick = BtnDesfazerClick
+  end
   object DtsFuncionarios: TDataSource
     DataSet = QryFuncionarios
     Left = 248

@@ -37,6 +37,7 @@ type
     LblValor: TLabel;
     QryFuncionariosSelecionados: TFDQuery;
     QryAux: TFDQuery;
+    procedure ClearFormFields;
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
     procedure LcbFuncionariosClick(Sender: TObject);
@@ -56,13 +57,19 @@ implementation
 
 {$R *.dfm}
 
-procedure TFrmLancarEventos.BtnCancelarClick(Sender: TObject);
+procedure TFrmLancarEventos.ClearFormFields;
 begin
   EdtMesAno.Clear;
   LcbCargos.KeyValue := Null;
   LcbFuncionarios.KeyValue := Null;
   LcbEventos.KeyValue := Null;
   EdtValor.Clear;
+  QryFuncionariosSelecionados.Close;
+end;
+
+procedure TFrmLancarEventos.BtnCancelarClick(Sender: TObject);
+begin
+  ClearFormFields;
 end;
 
 procedure TFrmLancarEventos.BtnConfirmarClick(Sender: TObject);
@@ -102,10 +109,10 @@ begin
   QryFuncionariosSelecionados.SQL.Text := 'SELECT CODIGO FROM FUNCIONARIOS WHERE ATIVO = 1';
   if LcbCargos.KeyValue <> Null then
     QryFuncionariosSelecionados.SQL.Text := QryFuncionariosSelecionados.SQL.Text
-      + 'AND CARGO = ' + VarToStr(lcbCargos.KeyValue)
+      + 'AND f.CARGO = ' + VarToStr(lcbCargos.KeyValue)
   else
     QryFuncionariosSelecionados.SQL.Text := QryFuncionariosSelecionados.SQL.Text
-      + 'AND CODIGO = ' + VarToStr(LcbFuncionarios.KeyValue);
+      + 'AND f.CODIGO = ' + VarToStr(LcbFuncionarios.KeyValue);
   QryFuncionariosSelecionados.Open;
 
   while not QryFuncionariosSelecionados.Eof do
@@ -121,14 +128,9 @@ begin
     QryAux.ExecSQL;
     QryFuncionariosSelecionados.Next;
   end;
+
+  ClearFormFields;
   ShowMessage('Evento processado');
-  //TODO: Criar Procedure para limpar campos
-  EdtMesAno.Clear;
-  LcbCargos.KeyValue := Null;
-  LcbFuncionarios.KeyValue := Null;
-  LcbEventos.KeyValue := Null;
-  EdtValor.Clear;
-  QryFuncionariosSelecionados.Close;
 end;
 
 procedure TFrmLancarEventos.FormCreate(Sender: TObject);
