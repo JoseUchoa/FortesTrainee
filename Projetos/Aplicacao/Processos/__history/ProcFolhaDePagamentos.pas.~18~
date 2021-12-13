@@ -1,0 +1,82 @@
+unit ProcFolhaDePagamentos;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs,Conexao, Vcl.StdCtrls, Vcl.Mask,
+  FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param,
+  FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf,
+  FireDAC.Stan.Async, FireDAC.DApt, Data.DB, FireDAC.Comp.DataSet,
+  FireDAC.Comp.Client;
+
+type
+  TFrmFolhaDePagamentos = class(TForm)
+    EdtMesAno: TMaskEdit;
+    LblMesAno: TLabel;
+    BtnProcessar: TButton;
+    MemoLog: TMemo;
+    QryFolha: TFDQuery;
+    QryFuncionarios: TFDQuery;
+    QryFolhaMES_ANO: TStringField;
+    QryFolhaCOD_FUNCIONARIO: TIntegerField;
+    QryFolhaDESCONTO_INSS: TFloatField;
+    QryFolhaDESCONTO_IRRF: TFloatField;
+    QryFolhaSALDO_EVENTOS: TFloatField;
+    QryFolhaSALARIO_BRUTO: TFloatField;
+    QryFolhaSALARIO_LIQUIDO: TFloatField;
+    procedure BtnProcessarClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FrmFolhaDePagamentos: TFrmFolhaDePagamentos;
+
+implementation
+
+uses
+  CalcINSS;
+
+{$R *.dfm}
+
+procedure TFrmFolhaDePagamentos.BtnProcessarClick(Sender: TObject);
+var
+  MesAno: TDate;
+begin
+  MesAno := StrToDateDef('01/'+ EdtMesAno.Text, 0);
+  
+  if MesAno <= 0 then
+  begin
+    ShowMessage('O Mês/ano é obrigatório.');
+    EdtMesAno.SetFocus;
+    Exit;
+  end;     
+            
+  MemoLog.Clear;
+  QryFolha.Close;
+  QryFolha.SQL.Text := 'SELECT * FROM FOLHAS WHERE MES_ANO = :MES_ANO';
+  QryFolha.ParamByName('MES_ANO').AsString := EdtMesAno.Text;
+  QryFolha.Open;
+
+  DM.Connection.StartTransaction;
+  try
+    while not QryFuncionarios.Eof do
+    begin
+      if QryFolha.Locate('MES_ANO;COD_FUNCIONARIO', VarArrayOf([MesAno, QryFuncionarios.FieldByName('CODIGO').AsString]), [loCaseInsensitive]) then
+        QryFolha.Edit
+      else 
+      begin
+        
+      end;
+    end;
+    DM.Connection.Commit;
+  except
+    DM.Connection.Rollback;
+    MemoLog.Lines.Add('Ocorreu um erro ao processar as transações.');
+  end;
+end;
+
+end.

@@ -26,7 +26,7 @@ uses
 
 type
   TFormPrincipal = class(TForm)
-    MainMenu1: TMainMenu;
+    MainMenu: TMainMenu;
     as1: TMenuItem;
     Cargos: TMenuItem;
     Eventos: TMenuItem;
@@ -37,11 +37,11 @@ type
     Sair1: TMenuItem;
     abeladeINSS1: TMenuItem;
     abeladeIRRF1: TMenuItem;
-    N1: TMenuItem;
-    Sair2: TMenuItem;
     MudanadeSalrios1: TMenuItem;
     MudanadeSalrios2: TMenuItem;
     Folhadepagamento1: TMenuItem;
+    FolhadePagamento2: TMenuItem;
+    Funcionrios1: TMenuItem;
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
     procedure CargosClick(Sender: TObject);
@@ -50,6 +50,8 @@ type
     procedure MudanadeSalrios2Click(Sender: TObject);
     procedure MudanadeSalrios1Click(Sender: TObject);
     procedure Folhadepagamento1Click(Sender: TObject);
+    procedure Sair1Click(Sender: TObject);
+    procedure Funcionrios1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -63,7 +65,8 @@ implementation
 
 uses
   Conexao, CadastroCargos, CadastroEventos, CadastroFuncionarios,
-  ProcLancarEventos, ProcMudarSalarios, ProcFolhaDePagamentos;
+  ProcLancarEventos, ProcMudarSalarios, ProcFolhaDePagamentos,
+  RelFuncionariosCfg, RelFuncionarios;
 
 {$R *.dfm}
 
@@ -90,6 +93,13 @@ begin
 
 end;
 
+procedure TFormPrincipal.Funcionrios1Click(Sender: TObject);
+begin
+  FrmRelFuncionariosCFG := TFrmRelFuncionariosCFG.Create(Self);
+  FrmRelFuncionariosCFG.ShowModal;
+  FrmRelFuncionariosCFG.Free;
+end;
+
 procedure TFormPrincipal.MudanadeSalrios1Click(Sender: TObject);
 begin
   FrmMudarSalarios := TFrmMudarSalarios.Create(Self);
@@ -102,6 +112,11 @@ begin
   FrmLancarEventos := TFrmLancarEventos.Create(Self);
   FrmLancarEventos.ShowModal;
   FrmLancarEventos.Free;
+end;
+
+procedure TFormPrincipal.Sair1Click(Sender: TObject);
+begin
+  Application.Terminate;
 end;
 
 procedure TFormPrincipal.Folhadepagamento1Click(Sender: TObject);

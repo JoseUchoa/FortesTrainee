@@ -2,7 +2,7 @@ object FormPrincipal: TFormPrincipal
   Left = 0
   Top = 0
   Caption = 'Principal'
-  ClientHeight = 231
+  ClientHeight = 230
   ClientWidth = 280
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -10,15 +10,15 @@ object FormPrincipal: TFormPrincipal
   Font.Height = -11
   Font.Name = 'Tahoma'
   Font.Style = []
-  Menu = MainMenu1
+  Menu = MainMenu
   OldCreateOrder = False
   OnCreate = FormCreate
   OnDestroy = FormDestroy
   PixelsPerInch = 96
   TextHeight = 13
-  object MainMenu1: TMainMenu
-    Left = 88
-    Top = 40
+  object MainMenu: TMainMenu
+    Left = 240
+    Top = 8
     object as1: TMenuItem
       Caption = 'Cadastros'
       object Cargos: TMenuItem
@@ -42,12 +42,6 @@ object FormPrincipal: TFormPrincipal
       object abeladeIRRF1: TMenuItem
         Caption = 'Tabela de IRRF'
       end
-      object N1: TMenuItem
-        Caption = '-'
-      end
-      object Sair2: TMenuItem
-        Caption = 'Sair'
-      end
     end
     object Processos1: TMenuItem
       Caption = 'Processos'
@@ -66,9 +60,17 @@ object FormPrincipal: TFormPrincipal
     end
     object Relatrios1: TMenuItem
       Caption = 'Relat'#243'rios'
+      object FolhadePagamento2: TMenuItem
+        Caption = 'Folha de Pagamento'
+      end
+      object Funcionrios1: TMenuItem
+        Caption = 'Funcion'#225'rios'
+        OnClick = Funcionrios1Click
+      end
     end
     object Sair1: TMenuItem
       Caption = 'Sair'
+      OnClick = Sair1Click
     end
   end
 end

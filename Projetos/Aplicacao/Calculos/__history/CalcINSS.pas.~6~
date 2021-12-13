@@ -1,0 +1,21 @@
+unit CalcINSS;
+
+interface
+
+type TInss = class
+  class function Calc(Salario: Currency): Currency;
+end;
+
+implementation
+
+uses
+  SysUtils;
+
+class function TInss.Calc(Salario: Currency): Currency;
+begin
+  Result := 0;
+  if Salario <= 0 then
+    raise Exception.Create('Salários deve ser maior que zero.');
+end;
+
+end.

@@ -9,7 +9,10 @@ uses
   CadastroFuncionarios in 'Cadastros\CadastroFuncionarios.pas' {FrmCadFuncionarios},
   ProcLancarEventos in 'Processos\ProcLancarEventos.pas' {FrmLancarEventos},
   ProcMudarSalarios in 'Processos\ProcMudarSalarios.pas' {FrmMudarSalarios},
-  ProcFolhaDePagamentos in 'Processos\ProcFolhaDePagamentos.pas' {FrmFolhaDePagamentos};
+  ProcFolhaDePagamentos in 'Processos\ProcFolhaDePagamentos.pas' {FrmFolhaDePagamentos},
+  CalcINSS in 'Calculos\CalcINSS.pas',
+  RelFuncionarios in 'Relatorios\RelFuncionarios.pas' {FrmRelFuncionarios},
+  RelFuncionariosCfg in 'Relatorios\RelFuncionariosCfg.pas' {FrmRelFuncionariosCFG};
 
 {$R *.res}
 

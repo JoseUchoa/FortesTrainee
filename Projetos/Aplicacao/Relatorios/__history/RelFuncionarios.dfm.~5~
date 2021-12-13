@@ -1,0 +1,151 @@
+object FrmRelFuncionarios: TFrmRelFuncionarios
+  Left = 0
+  Top = 0
+  Caption = 'FrmRelFuncionarios'
+  ClientHeight = 558
+  ClientWidth = 861
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object RLReport1: TRLReport
+    Left = 8
+    Top = 8
+    Width = 794
+    Height = 1123
+    DataSource = DtsLista
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clBlack
+    Font.Height = -13
+    Font.Name = 'Arial'
+    Font.Style = []
+    object RLBand1: TRLBand
+      Left = 38
+      Top = 38
+      Width = 718
+      Height = 75
+      BandType = btHeader
+      Borders.Sides = sdCustom
+      Borders.DrawLeft = False
+      Borders.DrawTop = False
+      Borders.DrawRight = False
+      Borders.DrawBottom = True
+      object LblContato: TLabel
+        Left = 536
+        Top = 53
+        Width = 45
+        Height = 16
+        Caption = 'Contato'
+      end
+      object LblCodigo: TRLLabel
+        Left = 3
+        Top = 55
+        Width = 44
+        Height = 16
+        Caption = 'Codigo'
+      end
+      object LblNome: TRLLabel
+        Left = 131
+        Top = 53
+        Width = 38
+        Height = 16
+        Caption = 'Nome'
+      end
+      object LblCargo: TRLLabel
+        Left = 380
+        Top = 53
+        Width = 38
+        Height = 16
+        Caption = 'Cargo'
+      end
+      object LblFuncionarios: TRLLabel
+        Left = 3
+        Top = 11
+        Width = 86
+        Height = 16
+        Caption = 'Funcion'#225'rios'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Arial'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+    end
+    object RLBand2: TRLBand
+      Left = 38
+      Top = 113
+      Width = 718
+      Height = 34
+      object RLDBText1: TRLDBText
+        Left = 3
+        Top = 12
+        Width = 55
+        Height = 16
+        DataField = 'CODIGO'
+        DataSource = DtsLista
+        Text = ''
+      end
+      object RLDBText2: TRLDBText
+        Left = 131
+        Top = 12
+        Width = 43
+        Height = 16
+        DataField = 'NOME'
+        DataSource = DtsLista
+        Text = ''
+      end
+      object RLDBText3: TRLDBText
+        Left = 380
+        Top = 12
+        Width = 51
+        Height = 16
+        DataField = 'CARGO'
+        DataSource = DtsLista
+        Text = ''
+      end
+      object RLDBText4: TRLDBText
+        Left = 536
+        Top = 12
+        Width = 65
+        Height = 16
+        DataField = 'CONTATO'
+        DataSource = DtsLista
+        Text = ''
+      end
+    end
+    object RLBand3: TRLBand
+      Left = 38
+      Top = 147
+      Width = 718
+      Height = 22
+      BandType = btFooter
+      object RLSystemInfo1: TRLSystemInfo
+        Left = 644
+        Top = 3
+        Width = 39
+        Height = 16
+        Text = ''
+      end
+    end
+  end
+  object DtsLista: TDataSource
+    DataSet = QryLista
+    Left = 816
+    Top = 16
+  end
+  object QryLista: TFDQuery
+    Connection = DM.Connection
+    SQL.Strings = (
+      'SELECT F.CODIGO, F.NOME, F.CONTATO, C.NOME AS CARGO'
+      'FROM FUNCIONARIOS F'
+      'LEFT JOIN CARGOS C ON(C.CODIGO = F.CARGO)')
+    Left = 816
+    Top = 64
+  end
+end

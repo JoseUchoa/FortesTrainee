@@ -1,0 +1,11 @@
+unit CalcINSS;
+
+interface
+
+type TInss = class
+  class function Calc(Salario: Currency): Currency;
+end;
+
+implementation
+
+end.
