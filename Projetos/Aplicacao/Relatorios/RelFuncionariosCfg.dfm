@@ -2,8 +2,8 @@ object FrmRelFuncionariosCFG: TFrmRelFuncionariosCFG
   Left = 0
   Top = 0
   Caption = 'Funcionarios'
-  ClientHeight = 231
-  ClientWidth = 505
+  ClientHeight = 121
+  ClientWidth = 424
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText

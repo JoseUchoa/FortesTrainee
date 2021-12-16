@@ -52,6 +52,7 @@ type
     procedure Folhadepagamento1Click(Sender: TObject);
     procedure Sair1Click(Sender: TObject);
     procedure Funcionrios1Click(Sender: TObject);
+    procedure FolhadePagamento2Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -66,7 +67,7 @@ implementation
 uses
   Conexao, CadastroCargos, CadastroEventos, CadastroFuncionarios,
   ProcLancarEventos, ProcMudarSalarios, ProcFolhaDePagamentos,
-  RelFuncionariosCfg, RelFuncionarios;
+  RelFuncionariosCfg, RelFolhaDePagamentosCfg;
 
 {$R *.dfm}
 
@@ -116,7 +117,7 @@ end;
 
 procedure TFormPrincipal.Sair1Click(Sender: TObject);
 begin
-  Application.Terminate;
+  Close;
 end;
 
 procedure TFormPrincipal.Folhadepagamento1Click(Sender: TObject);
@@ -124,6 +125,13 @@ begin
   FrmFolhaDePagamentos := TFrmFolhaDePagamentos.Create(Self);
   FrmFolhaDePagamentos.ShowModal;
   FrmFolhaDePagamentos.Free;
+end;
+
+procedure TFormPrincipal.FolhadePagamento2Click(Sender: TObject);
+begin
+  FrmFolhaDePagamentosCfg := TFrmFolhaDePagamentosCfg.Create(Self);
+  FrmFolhaDePagamentosCfg.ShowModal;
+  FrmFolhaDePagamentosCfg.Free;
 end;
 
 procedure TFormPrincipal.FormCreate(Sender: TObject);

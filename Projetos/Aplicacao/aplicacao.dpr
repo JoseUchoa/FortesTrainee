@@ -12,7 +12,10 @@ uses
   ProcFolhaDePagamentos in 'Processos\ProcFolhaDePagamentos.pas' {FrmFolhaDePagamentos},
   CalcINSS in 'Calculos\CalcINSS.pas',
   RelFuncionarios in 'Relatorios\RelFuncionarios.pas' {FrmRelFuncionarios},
-  RelFuncionariosCfg in 'Relatorios\RelFuncionariosCfg.pas' {FrmRelFuncionariosCFG};
+  RelFuncionariosCfg in 'Relatorios\RelFuncionariosCfg.pas' {FrmRelFuncionariosCFG},
+  CalcIRRF in 'Calculos\CalcIRRF.pas',
+  RelFolhaDePagamentos in 'Relatorios\RelFolhaDePagamentos.pas' {FrmRelFolhaDePagamentos},
+  RelFolhaDePagamentosCfg in 'Relatorios\RelFolhaDePagamentosCfg.pas' {FrmFolhaDePagamentosCfg};
 
 {$R *.res}
 

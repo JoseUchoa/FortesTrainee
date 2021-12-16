@@ -68,12 +68,12 @@ begin
     'SELECT F.CODIGO, F.NOME, F.CONTATO, C.NOME AS CARGO ' +
     'FROM FUNCIONARIOS F ' +
     'LEFT JOIN CARGOS C ON(C.CODIGO = F.CARGO) ' +
-    //IfThen(CodCargo >= 0, 'WHERE F.CARGO = ' + IntToStr(CodCargo));
-    'ORDER BY C.NOME, F.CODIGO';
+    IfThen(CodCargo >= 0, 'WHERE F.CARGO = ' + IntToStr(CodCargo));
+    //'ORDER BY C.NOME, F.CODIGO';
   QryLista.Open;
 
   if not QryLista.IsEmpty then
-    RLFuncionarios2.PreviewModal
+    RLFuncionarios1.PreviewModal
   else
     ShowMessage('Nenhum dado encontrado.');
 end;

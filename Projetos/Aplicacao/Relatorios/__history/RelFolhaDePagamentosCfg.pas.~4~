@@ -1,0 +1,31 @@
+unit RelFolhaDePagamentosCfg;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, RelFolhaDePagamentos, Vcl.StdCtrls;
+
+type
+  TFrmFolhaDePagamentosCfg = class(TForm)
+    BtnCancelar: TButton;
+    procedure BtnCancelarClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FrmFolhaDePagamentosCfg: TFrmFolhaDePagamentosCfg;
+
+implementation
+
+{$R *.dfm}
+
+procedure TFrmFolhaDePagamentosCfg.BtnCancelarClick(Sender: TObject);
+begin
+  Close;
+end;
+
+end.

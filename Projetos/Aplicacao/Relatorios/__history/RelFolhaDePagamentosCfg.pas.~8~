@@ -1,0 +1,55 @@
+unit RelFolhaDePagamentosCfg;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, RelFolhaDePagamentos, Vcl.StdCtrls,
+  Vcl.Mask;
+
+type
+  TFrmFolhaDePagamentosCfg = class(TForm)
+    BtnCancelar: TButton;
+    LblMesAno: TLabel;
+    EdtMesAno: TMaskEdit;
+    BtnProcessar: TButton;
+    procedure BtnCancelarClick(Sender: TObject);
+    procedure BtnProcessarClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FrmFolhaDePagamentosCfg: TFrmFolhaDePagamentosCfg;
+
+implementation
+
+{$R *.dfm}
+
+procedure TFrmFolhaDePagamentosCfg.BtnCancelarClick(Sender: TObject);
+begin
+  Close;
+end;
+
+procedure TFrmFolhaDePagamentosCfg.BtnProcessarClick(Sender: TObject);
+var
+  MesAno: TDate;
+begin
+  MesAno := StrToDateDef('01/'+ EdtMesAno.Text, 0);
+
+  if MesAno <= 0 then
+  begin
+    ShowMessage('O Mês/ano é obrigatório.');
+    EdtMesAno.SetFocus;
+    Exit;
+  end;
+
+  FrmFolhaDePagamentosCfg := TFrmFolhaDePagamentosCfg.Create(Self);
+  FrmFolhaDePagamentosCfg.AbrirRelatorio(EdtMesAno.Text);
+  FrmFolhaDePagamentosCfg.Free;
+
+end;
+
+end.
