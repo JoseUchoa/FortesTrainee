@@ -283,7 +283,6 @@ object FrmRelFuncionarios: TFrmRelFuncionarios
     Top = 16
   end
   object QryLista: TFDQuery
-    Active = True
     Connection = DM.Connection
     SQL.Strings = (
       'SELECT F.CODIGO, F.NOME, F.CONTATO, C.NOME AS CARGO'

@@ -11,8 +11,8 @@
     <Transaction>2021/11/19 14:04:34.000.425,=C:\Users\joseg\Documents\GitHub\FortesTrainee\Projetos\Aplicação\Unit2.pas</Transaction>
     <Transaction>2021/11/19 14:04:46.000.761,C:\Users\joseg\Documents\GitHub\FortesTrainee\Projetos\Aplicação\Unit2.pas=C:\Users\joseg\Documents\GitHub\FortesTrainee\Projetos\Aplicação\Cadastros\CadastroCargos.pas</Transaction>
     <Transaction>2021/11/19 14:04:46.000.761,C:\Users\joseg\Documents\GitHub\FortesTrainee\Projetos\Aplicação\Unit2.dfm=C:\Users\joseg\Documents\GitHub\FortesTrainee\Projetos\Aplicação\Cadastros\CadastroCargos.dfm</Transaction>
-    <Transaction>2021/11/19 20:12:25.000.899,C:\Users\joseg\Documents\GitHub\FortesTrainee\Projetos\Aplicação\Cadastros\CadastroCargos.dfm=C:\Users\joseg\Documents\GitHub\FortesTrainee\Projetos\Aplicação\CadastroCargos.dfm</Transaction>
     <Transaction>2021/11/19 20:12:25.000.899,C:\Users\joseg\Documents\GitHub\FortesTrainee\Projetos\Aplicação\Cadastros\CadastroCargos.pas=C:\Users\joseg\Documents\GitHub\FortesTrainee\Projetos\Aplicação\CadastroCargos.pas</Transaction>
+    <Transaction>2021/11/19 20:12:25.000.899,C:\Users\joseg\Documents\GitHub\FortesTrainee\Projetos\Aplicação\Cadastros\CadastroCargos.dfm=C:\Users\joseg\Documents\GitHub\FortesTrainee\Projetos\Aplicação\CadastroCargos.dfm</Transaction>
     <Transaction>2021/11/19 20:12:52.000.508,C:\Users\joseg\Documents\GitHub\FortesTrainee\Projetos\Aplicação\CadastroCargos.dfm=C:\Users\joseg\Documents\GitHub\FortesTrainee\Projetos\Aplicação\Cadastros\CadastroCargos.dfm</Transaction>
     <Transaction>2021/11/19 20:12:52.000.508,C:\Users\joseg\Documents\GitHub\FortesTrainee\Projetos\Aplicação\CadastroCargos.pas=C:\Users\joseg\Documents\GitHub\FortesTrainee\Projetos\Aplicação\Cadastros\CadastroCargos.pas</Transaction>
     <Transaction>2021/11/19 20:33:27.000.979,=C:\Users\joseg\Documents\GitHub\FortesTrainee\Projetos\Aplicação\Unit2.pas</Transaction>
@@ -52,7 +52,10 @@
     <Transaction>2021/12/14 17:46:39.000.456,C:\Users\joseg\OneDrive\Documentos\Github\FortesTrainee\Projetos\Aplicacao\Relatorios\RelFolhaDePagamentos.dfm=C:\Users\joseg\OneDrive\Documentos\Github\FortesTrainee\Projetos\Aplicacao\Unit2.dfm</Transaction>
     <Transaction>2021/12/14 17:46:39.000.456,C:\Users\joseg\OneDrive\Documentos\Github\FortesTrainee\Projetos\Aplicacao\Relatorios\RelFolhaDePagamentos.pas=C:\Users\joseg\OneDrive\Documentos\Github\FortesTrainee\Projetos\Aplicacao\Unit2.pas</Transaction>
     <Transaction>2021/12/16 08:59:13.000.795,=C:\Users\joseg\OneDrive\Documentos\Github\FortesTrainee\Projetos\Aplicacao\Unit3.pas</Transaction>
-    <Transaction>2021/12/16 08:59:45.000.588,C:\Users\joseg\OneDrive\Documentos\Github\FortesTrainee\Projetos\Aplicacao\Unit3.dfm=C:\Users\joseg\OneDrive\Documentos\Github\FortesTrainee\Projetos\Aplicacao\Relatorios\RelFolhaDePagamentosCfg.dfm</Transaction>
     <Transaction>2021/12/16 08:59:45.000.588,C:\Users\joseg\OneDrive\Documentos\Github\FortesTrainee\Projetos\Aplicacao\Unit3.pas=C:\Users\joseg\OneDrive\Documentos\Github\FortesTrainee\Projetos\Aplicacao\Relatorios\RelFolhaDePagamentosCfg.pas</Transaction>
+    <Transaction>2021/12/16 08:59:45.000.588,C:\Users\joseg\OneDrive\Documentos\Github\FortesTrainee\Projetos\Aplicacao\Unit3.dfm=C:\Users\joseg\OneDrive\Documentos\Github\FortesTrainee\Projetos\Aplicacao\Relatorios\RelFolhaDePagamentosCfg.dfm</Transaction>
+    <Transaction>2021/12/23 16:28:27.000.031,=C:\Users\joseg\OneDrive\Documentos\Github\FortesTrainee\Projetos\Aplicacao\Unit1.pas</Transaction>
+    <Transaction>2021/12/23 16:28:50.000.672,C:\Users\joseg\OneDrive\Documentos\Github\FortesTrainee\Projetos\Aplicacao\Unit1.pas=C:\Users\joseg\OneDrive\Documentos\Github\FortesTrainee\Projetos\Desafios\CalculoIRRF.pas</Transaction>
+    <Transaction>2021/12/23 16:38:46.000.941,C:\Users\joseg\OneDrive\Documentos\Github\FortesTrainee\Projetos\Desafios\CalculoIRRF.pas=</Transaction>
   </Transactions>
 </BorlandProject>
