@@ -19,7 +19,7 @@ implementation
 uses
   Generics.Collections, Math, SysUtils;
 
-function ProdutosComMaiorValorVendido(Produtos: TObjectList<TProduto>): String;
+function ProdutosComMaiorValorVendidos(Produtos: TObjectList<TProduto>): String;
 var
   Dict: TDictionary<String,Currency>;
   List: TList< TPair<String, Currency> >;
