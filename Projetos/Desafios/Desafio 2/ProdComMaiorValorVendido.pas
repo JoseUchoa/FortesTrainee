@@ -1,0 +1,73 @@
+unit ProdComMaiorValorVendido;
+
+interface
+
+type
+  TProduto = class
+    private
+      FCodigo: String;
+      FQtde: Integer;
+      FValor: Currency;
+    public
+      property Codigo: String read FCodigo write FCodigo;
+      property Qtde: Integer read FQtde write FQtde;
+      property Valor: Currency read FValor write FValor;
+  end;
+
+implementation
+
+uses
+  Generics.Collections, Math, SysUtils;
+
+function ProdutosComMaiorValorVendidos(Produtos: TObjectList<TProduto>): String;
+var
+  Dict: TDictionary<String,Currency>;
+  List: TList< TPair<String, Currency> >;
+  AuxPair: TPair<String,Currency>;
+  IProd: TProduto;
+  I: Integer;
+begin
+  Dict := Nil;
+  List := Nil;
+  Result := '';
+
+  try
+    Dict := TDictionary<String,Currency>.Create;
+    List := TList< TPair<String, Currency> >.Create;
+
+    for IProd in Produtos do
+    begin
+      if not Dict.ContainsKey(IProd.Codigo) then
+        Dict.Add(IProd.Codigo,0);
+
+      AuxPair := Dict.ExtractPair(Iprod.Codigo);
+      AuxPair.Value := AuxPair.Value + ( IProd.Qtde * IProd.Valor );
+      Dict.AddOrSetValue(IProd.Codigo, AuxPair.Value);
+    end;
+
+    for AuxPair in Dict do
+      List.Add(AuxPair);
+
+    List.Sort(
+      TComparer< TPair<String,Currency> >.Construct(
+        function(const A,B: TPair<String,Currency>): Integer
+        begin
+
+          Result := CompareValue(A.Value,B.Value);
+          if Result = 0 then
+            Result := CompareStr(A.Key, B.Key);
+
+        end
+      )
+    );
+    List.Reverse;
+
+    for I := 0 to Min(3, List.Count )-1 do
+      Result := Result + List[I].Key + ':' + CurrToStr(List[I].Value) + ';';
+
+  finally
+    Dict.Free;
+    List.Free;
+  end;
+end;
+end.

@@ -1,0 +1,16 @@
+unit ProdComMaiorValorVendido;
+
+interface
+
+implementation
+
+uses
+  Generics.Collections;
+
+
+function ProdutosComMaiorValorVendido(Produtos: TObjectList<TProduto>): String;
+begin
+
+end;
+
+end.
