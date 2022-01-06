@@ -1,36 +1,31 @@
 ﻿[Closed Files]
-File_0=TSourceModule,'C:\Users\joseg\OneDrive\Documentos\Github\FortesTrainee\Projetos\Aplicacao\Principal.pas',0,1,55,26,134,0,0,,
-File_1=TSourceModule,'C:\Users\joseg\OneDrive\Documentos\Github\FortesTrainee\Projetos\Aplicacao\Relatorios\RelFolhaDePagamentosCfg.pas',0,1,34,68,49,0,0,,
-File_2=TSourceModule,'C:\Users\joseg\OneDrive\Documentos\Github\FortesTrainee\Projetos\Aplicacao\Relatorios\RelFolhaDePagamentos.pas',0,1,51,17,66,0,0,,
-File_3=TSourceModule,'C:\Users\joseg\OneDrive\Documentos\Github\FortesTrainee\Projetos\Aplicacao\Calculos\CalcINSS.pas',0,1,4,1,11,0,0,,
-File_4=TSourceModule,'C:\Users\joseg\OneDrive\Documentos\Github\FortesTrainee\Projetos\Aplicacao\Relatorios\RelFuncionarios.pas',0,1,55,75,71,0,0,,
-File_5=TSourceModule,'C:\Users\joseg\OneDrive\Documentos\Github\FortesTrainee\Projetos\Aplicacao\Relatorios\RelFuncionariosCfg.pas',0,1,34,58,48,0,0,,
-File_6=TSourceModule,'C:\Users\joseg\OneDrive\Documentos\Github\FortesTrainee\Projetos\Aplicacao\Processos\ProcFolhaDePagamentos.pas',0,1,44,21,52,0,0,,
-File_7=TSourceModule,'C:\Users\joseg\OneDrive\Documentos\Github\FortesTrainee\Projetos\Aplicacao\Processos\ProcLancarEventos.pas',0,1,1,14,15,0,0,,
-File_8=TSourceModule,'C:\Users\joseg\OneDrive\Documentos\Github\FortesTrainee\Projetos\Aplicacao\Cadastros\CadastroCargos.pas',0,1,1,41,10,0,0,,
-File_9=TSourceModule,'C:\Users\joseg\OneDrive\Documentos\Github\FortesTrainee\Projetos\Aplicacao\Processos\ProcMudarSalarios.pas',0,1,92,35,125,0,0,,
-File_10=TSourceModule,'C:\Users\joseg\OneDrive\Documentos\Github\FortesTrainee\Projetos\Aplicacao\Cadastros\CadastroFuncionarios.pas',0,1,146,30,165,0,0,,
+File_0=TSourceModule,'C:\Users\joseg\OneDrive\Documentos\Github\FortesTrainee\Projetos\Aplicacao\Cadastros\CadastroFuncionarios.pas',0,1,146,30,165,0,0,,
+File_1=TSourceModule,'C:\Users\joseg\OneDrive\Documentos\Github\FortesTrainee\Projetos\Aplicacao\Calculos\CalcIRRF.pas',0,1,1,13,39,0,0,,
+File_2=TSourceModule,'C:\Users\joseg\OneDrive\Documentos\Github\FortesTrainee\Projetos\Aplicacao\Relatorios\RelFolhaDePagamentosCfg.pas',0,1,34,68,49,0,0,,
+File_3=TSourceModule,'C:\Users\joseg\OneDrive\Documentos\Github\FortesTrainee\Projetos\Aplicacao\Relatorios\RelFolhaDePagamentos.pas',0,1,51,17,66,0,0,,
+File_4=TSourceModule,'C:\Users\joseg\OneDrive\Documentos\Github\FortesTrainee\Projetos\Aplicacao\Calculos\CalcINSS.pas',0,1,4,1,11,0,0,,
+File_5=TSourceModule,'C:\Users\joseg\OneDrive\Documentos\Github\FortesTrainee\Projetos\Aplicacao\Relatorios\RelFuncionarios.pas',0,1,55,75,71,0,0,,
+File_6=TSourceModule,'C:\Users\joseg\OneDrive\Documentos\Github\FortesTrainee\Projetos\Aplicacao\Relatorios\RelFuncionariosCfg.pas',0,1,34,58,48,0,0,,
+File_7=TSourceModule,'C:\Users\joseg\OneDrive\Documentos\Github\FortesTrainee\Projetos\Aplicacao\Processos\ProcFolhaDePagamentos.pas',0,1,44,21,52,0,0,,
+File_8=TSourceModule,'C:\Users\joseg\OneDrive\Documentos\Github\FortesTrainee\Projetos\Aplicacao\Processos\ProcLancarEventos.pas',0,1,1,14,15,0,0,,
+File_9=TSourceModule,'C:\Users\joseg\OneDrive\Documentos\Github\FortesTrainee\Projetos\Aplicacao\Cadastros\CadastroCargos.pas',0,1,1,41,10,0,0,,
+File_10=TSourceModule,'C:\Users\joseg\OneDrive\Documentos\Github\FortesTrainee\Projetos\Aplicacao\Processos\ProcMudarSalarios.pas',0,1,92,35,125,0,0,,
 File_11=TSourceModule,'C:\Users\joseg\OneDrive\Documentos\Github\FortesTrainee\Projetos\Aplicacao\Cadastros\CadastroEventos.pas',0,1,1,1,1,0,0,,
 File_12=TSourceModule,'C:\Users\joseg\OneDrive\Documentos\Github\FortesTrainee\Projetos\Aplicação\Principal.pas',0,1,55,3,65,0,0,,
 File_13=TSourceModule,'C:\Users\joseg\OneDrive\Documentos\Github\FortesTrainee\Projetos\Aplicação\Cadastros\CadastroEventos.pas',0,1,1,1,1,0,0,,
 
 [Modules]
-Module0=C:\Users\joseg\OneDrive\Documentos\Github\FortesTrainee\Projetos\Desafios\CalculoIRRF.pas
-Module1=C:\Users\joseg\OneDrive\Documentos\Github\FortesTrainee\Projetos\Aplicacao\Calculos\CalcIRRF.pas
-Count=2
+Module0=C:\Users\joseg\OneDrive\Documentos\Github\FortesTrainee\Projetos\Aplicacao\Principal.pas
+Count=1
 EditWindowCount=1
 
-[C:\Users\joseg\OneDrive\Documentos\Github\FortesTrainee\Projetos\Desafios\CalculoIRRF.pas]
-ModuleType=TSourceModule
-
-[C:\Users\joseg\OneDrive\Documentos\Github\FortesTrainee\Projetos\Aplicacao\Calculos\CalcIRRF.pas]
+[C:\Users\joseg\OneDrive\Documentos\Github\FortesTrainee\Projetos\Aplicacao\Principal.pas]
 ModuleType=TSourceModule
 
 [EditWindow0]
-ViewCount=2
-CurrentEditView=C:\Users\joseg\OneDrive\Documentos\Github\FortesTrainee\Projetos\Desafios\CalculoIRRF.pas
+ViewCount=1
+CurrentEditView=C:\Users\joseg\OneDrive\Documentos\Github\FortesTrainee\Projetos\Aplicacao\Principal.pas
 View0=0
-View1=1
 PercentageSizes=1
 Create=1
 Visible=1
@@ -62,25 +57,14 @@ BottomMiddelPanelData=0000080001020200000009000000446F636B5369746530100000004772
 
 [View0]
 CustomEditViewType=TEditView
-Module=C:\Users\joseg\OneDrive\Documentos\Github\FortesTrainee\Projetos\Aplicacao\Calculos\CalcIRRF.pas
+Module=C:\Users\joseg\OneDrive\Documentos\Github\FortesTrainee\Projetos\Aplicacao\Principal.pas
 CursorX=13
-CursorY=39
-TopLine=10
-LeftCol=1
-Elisions=
-Bookmarks=
-EditViewName=C:\Users\joseg\OneDrive\Documentos\Github\FortesTrainee\Projetos\Aplicacao\Calculos\CalcIRRF.pas
-
-[View1]
-CustomEditViewType=TEditView
-Module=C:\Users\joseg\OneDrive\Documentos\Github\FortesTrainee\Projetos\Desafios\CalculoIRRF.pas
-CursorX=13
-CursorY=33
+CursorY=11
 TopLine=1
 LeftCol=1
 Elisions=
 Bookmarks=
-EditViewName=C:\Users\joseg\OneDrive\Documentos\Github\FortesTrainee\Projetos\Desafios\CalculoIRRF.pas
+EditViewName=C:\Users\joseg\OneDrive\Documentos\Github\FortesTrainee\Projetos\Aplicacao\Principal.pas
 
 [Watches]
 Count=0
@@ -211,6 +195,11 @@ LRDockWidth=1895
 Dockable=1
 StayOnTop=0
 SplitPos=111
+
+[PropInspDesignerSelection]
+ArrangeBy=Name
+SelectedItem=Action,
+ExpandedItems=Anchors=0,BorderIcons=0
 
 [frmDesignPreview]
 PercentageSizes=1
