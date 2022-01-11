@@ -16,7 +16,7 @@ var
   I,J: Integer;
 begin
   Result := '';
-  if length(Texto) < 12 then
+  if length(Str) < 12 then
     exit;
 
   Str := '';

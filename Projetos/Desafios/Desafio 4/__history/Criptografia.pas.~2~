@@ -15,10 +15,6 @@ var
   C: Char;
   I,J: Integer;
 begin
-  Result := '';
-  if length(Texto) < 12 then
-    exit;
-
   Str := '';
   for C in Texto do
     if C.IsSeparator then
@@ -26,9 +22,10 @@ begin
     else
       Str := Str + C;
 
-  while (length(Str) mod 8 <> 0) do
+  while (length(Str) <= 12) or (length(Str) mod 8 <> 0) do
     Str := Str + '@';
 
+  Result := '';
   for I := 1 to 8 do
   begin
     J := 0;
