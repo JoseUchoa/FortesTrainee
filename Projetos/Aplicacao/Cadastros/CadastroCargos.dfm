@@ -23,7 +23,7 @@ object FrmCadCargos: TFrmCadCargos
     Top = 8
     Width = 328
     Height = 214
-    ActivePage = TsLista
+    ActivePage = TsRegistro
     Anchors = [akLeft, akTop, akRight, akBottom]
     TabOrder = 0
     OnChange = PageControlChange

@@ -95,7 +95,11 @@ begin
   if QueryCargos.State = dsInsert then
     QueryCargosCODIGO.Value := 0;
   if QueryCargos.State in [dsInsert,dsEdit] then
+  begin
+    if EdtNome.Text = '' then
+      raise Exception.Create('O cargo deve possuir um nome.');
     QueryCargos.Post;
+  end;
 
   QueryCargos.Refresh;
   PageControl.ActivePage := TsLista;

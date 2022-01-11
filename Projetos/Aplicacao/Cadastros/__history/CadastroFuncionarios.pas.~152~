@@ -38,13 +38,11 @@ type
     EdtContato: TDBEdit;
     LblEmail: TLabel;
     EdtEmail: TDBEdit;
-    LblAtivo: TLabel;
     TxtCodigo: TDBText;
     QueryCargos: TFDQuery;
     QueryCargosCODIGO: TIntegerField;
     QueryCargosNOME: TStringField;
     DtsCargos: TDataSource;
-    RgAtivo: TDBRadioGroup;
     DtpNasc: TDateTimePicker;
     LcbCargo: TDBLookupComboBox;
     QueryFuncionariosCODIGO: TIntegerField;
@@ -56,10 +54,14 @@ type
     EdtSalario: TEdit;
     LblSalario: TLabel;
     QuerySalarios: TFDQuery;
-    QuerySalariosSALARIO: TIntegerField;
     DtsSalarios: TDataSource;
     QuerySalariosDATA_HORA: TDateField;
     QuerySalariosCOD_FUNCIONARIO: TIntegerField;
+    QuerySalariosSALARIO: TFMTBCDField;
+    PnlAtivo: TPanel;
+    RgAtivo: TDBRadioGroup;
+    Label1: TLabel;
+    QueryAux: TFDQuery;
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
     procedure AdicionarClick(Sender: TObject);
@@ -101,6 +103,7 @@ begin
   if (PageControl.ActivePage = TsLista) and (QueryFuncionarios.State in [dsInsert,dsEdit]) then
   begin
     PnlSalario.Visible := False;
+    PnlAtivo.Visible := False;
     EdtSalario.Text := '';
     QueryFuncionarios.Cancel;
     QueryFuncionarios.Refresh;
@@ -121,6 +124,7 @@ begin
   QueryFuncionarios.Append;
   QueryFuncionariosATIVO.Value := 1;
   PnlSalario.Visible := True;
+  PnlAtivo.Visible := False;
   EdtSalario.Text := '';
   PageControl.ActivePage := TsRegistro;
 end;
@@ -132,6 +136,7 @@ begin
     QueryFuncionarios.Edit;
     DtpNasc.DateTime :=  QueryFuncionariosNASCIMENTO.Value; ;
     PnlSalario.Visible := False;
+    PnlAtivo.Visible := True;
     EdtSalario.Text := '';
 
     PageControl.ActivePage := TsRegistro;
@@ -140,6 +145,16 @@ end;
 
 procedure TFrmCadFuncionarios.BtnRemoverClick(Sender: TObject);
 begin
+  QueryAux.SQL.Text := 'DELETE FROM FUNCIONARIOS_SALARIOS ' +
+    'WHERE COD_FUNCIONARIO = ' + DBGrid1.Fields[0].AsString;
+  QueryAux.ExecSQL;
+  QueryAux.SQL.Text := 'DELETE FROM FOLHAS_EVENTOS ' +
+    'WHERE COD_FUNCIONARIO = ' + DBGrid1.Fields[0].AsString;
+  QueryAux.ExecSQL;
+  QueryAux.SQL.Text := 'DELETE FROM FOLHAS ' +
+    'WHERE COD_FUNCIONARIO = ' + DBGrid1.Fields[0].AsString;
+  QueryAux.ExecSQL;
+
   if not QueryFuncionarios.IsEmpty then
     QueryFuncionarios.Delete;
 end;
@@ -152,6 +167,12 @@ begin
 
   if QueryFuncionarios.State in [dsInsert,dsEdit] then
   begin
+    if EdtNome.Text = '' then
+      raise Exception.Create('O nome é obrigatório');
+    if EdtSalario.Text = '' then
+      raise Exception.Create('O salario é obrigatório');
+
+
     QueryFuncionariosNASCIMENTO.Value := DtpNasc.DateTime;
     QueryFuncionarios.Post;
     QueryFuncionarios.Refresh;
@@ -169,6 +190,7 @@ begin
 
     EdtSalario.Text := '';
     PnlSalario.Visible := False;
+    PnlAtivo.Visible := False;
   end;
   PageControl.ActivePage := TsLista;
 end;
@@ -180,6 +202,7 @@ begin
 
   EdtSalario.Text := '';
   PnlSalario.Visible := False;
+  PnlAtivo.Visible := False;
   PageControl.ActivePage := TsLista;
 end;
 

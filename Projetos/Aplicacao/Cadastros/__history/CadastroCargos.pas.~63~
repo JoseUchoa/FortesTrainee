@@ -20,21 +20,21 @@ type
     DataSource: TDataSource;
     QueryCargosCODIGO: TIntegerField;
     QueryCargosNOME: TStringField;
-    Label1: TLabel;
-    Label2: TLabel;
-    DBEdit2: TDBEdit;
-    Confirmar: TButton;
-    Cancelar: TButton;
-    Adicionar: TButton;
-    Editar: TButton;
-    Remover: TButton;
-    DBText1: TDBText;
+    LblCodigo: TLabel;
+    LblNome: TLabel;
+    EdtNome: TDBEdit;
+    BtnConfirmar: TButton;
+    BtnCancelar: TButton;
+    BtnAdicionar: TButton;
+    BtnEditar: TButton;
+    BtnRemover: TButton;
+    TxtCodigo: TDBText;
     procedure FormCreate(Sender: TObject);
-    procedure AdicionarClick(Sender: TObject);
-    procedure EditarClick(Sender: TObject);
-    procedure RemoverClick(Sender: TObject);
-    procedure ConfirmarClick(Sender: TObject);
-    procedure CancelarClick(Sender: TObject);
+    procedure BtnAdicionarClick(Sender: TObject);
+    procedure BtnEditarClick(Sender: TObject);
+    procedure BtnRemoverClick(Sender: TObject);
+    procedure BtnConfirmarClick(Sender: TObject);
+    procedure BtnCancelarClick(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
     procedure PageControlChange(Sender: TObject);
   private
@@ -52,6 +52,7 @@ implementation
 procedure TFrmCadCargos.FormCreate(Sender: TObject);
 begin
   QueryCargos.Open;
+  PageControl.ActivePage := TsLista;
 end;
 
 procedure TFrmCadCargos.FormDestroy(Sender: TObject);
@@ -61,35 +62,35 @@ end;
 
 procedure TFrmCadCargos.PageControlChange(Sender: TObject);
 begin
-  if (PageControl.ActivePage = Lista) and (QueryCargos.State in [dsInsert,dsEdit]) then
+  if (PageControl.ActivePage = TsLista) and (QueryCargos.State in [dsInsert,dsEdit]) then
   begin
     QueryCargos.Cancel;
     QueryCargos.Refresh;
   end;
 end;
 
-procedure TFrmCadCargos.AdicionarClick(Sender: TObject);
+procedure TFrmCadCargos.BtnAdicionarClick(Sender: TObject);
 begin
   QueryCargos.Append;
-  PageControl.ActivePage := Registro;
+  PageControl.ActivePage := TsRegistro;
 end;
 
-procedure TFrmCadCargos.EditarClick(Sender: TObject);
+procedure TFrmCadCargos.BtnEditarClick(Sender: TObject);
 begin
   if not QueryCargos.IsEmpty then
   begin
     QueryCargos.Edit;
-    PageControl.ActivePage := Registro;
+    PageControl.ActivePage := TsRegistro;
   end;
 end;
 
-procedure TFrmCadCargos.RemoverClick(Sender: TObject);
+procedure TFrmCadCargos.BtnRemoverClick(Sender: TObject);
 begin
   if not QueryCargos.IsEmpty then
     QueryCargos.Delete;
 end;
 
-procedure TFrmCadCargos.ConfirmarClick(Sender: TObject);
+procedure TFrmCadCargos.BtnConfirmarClick(Sender: TObject);
 begin
   if QueryCargos.State = dsInsert then
     QueryCargosCODIGO.Value := 0;
@@ -97,14 +98,14 @@ begin
     QueryCargos.Post;
 
   QueryCargos.Refresh;
-  PageControl.ActivePage := Lista;
+  PageControl.ActivePage := TsLista;
 end;
 
-procedure TFrmCadCargos.CancelarClick(Sender: TObject);
+procedure TFrmCadCargos.BtnCancelarClick(Sender: TObject);
 begin
   if QueryCargos.State in [dsInsert,dsEdit] then
     QueryCargos.Cancel;
-  PageControl.ActivePage := Lista;
+  PageControl.ActivePage := TsLista;
 end;
 
 end.

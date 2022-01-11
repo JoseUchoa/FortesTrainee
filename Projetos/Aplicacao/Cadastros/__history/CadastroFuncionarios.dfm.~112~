@@ -127,7 +127,7 @@ object FrmCadFuncionarios: TFrmCadFuncionarios
         FocusControl = EdtEmail
       end
       object LblAtivo: TLabel
-        Left = 432
+        Left = 430
         Top = 184
         Width = 25
         Height = 13
@@ -245,8 +245,8 @@ object FrmCadFuncionarios: TFrmCadFuncionarios
         TitleFont.Style = []
       end
       object PnlSalario: TPanel
-        Left = 430
-        Top = 244
+        Left = 431
+        Top = 263
         Width = 204
         Height = 42
         BevelOuter = bvNone
@@ -265,6 +265,29 @@ object FrmCadFuncionarios: TFrmCadFuncionarios
           Width = 193
           Height = 21
           TabOrder = 0
+        end
+      end
+      object PnlAtivo: TPanel
+        Left = 343
+        Top = 239
+        Width = 218
+        Height = 66
+        TabOrder = 10
+        object DBRadioGroup1: TDBRadioGroup
+          Left = 0
+          Top = 7
+          Width = 187
+          Height = 30
+          Columns = 2
+          DataField = 'ATIVO'
+          DataSource = DtsFuncionarios
+          Items.Strings = (
+            'Ativo'
+            'Inativo')
+          TabOrder = 0
+          Values.Strings = (
+            '1'
+            '0')
         end
       end
     end
@@ -373,12 +396,6 @@ object FrmCadFuncionarios: TFrmCadFuncionarios
       'ORDER BY DATA_HORA DESC')
     Left = 304
     Top = 8
-    object QuerySalariosSALARIO: TIntegerField
-      DisplayLabel = 'Sal'#225'rio'
-      FieldName = 'SALARIO'
-      Origin = 'SALARIO'
-      Required = True
-    end
     object QuerySalariosDATA_HORA: TDateField
       FieldName = 'DATA_HORA'
       Origin = 'DATA_HORA'
@@ -388,6 +405,13 @@ object FrmCadFuncionarios: TFrmCadFuncionarios
       FieldName = 'COD_FUNCIONARIO'
       Origin = 'COD_FUNCIONARIO'
       Required = True
+    end
+    object QuerySalariosSALARIO: TFMTBCDField
+      FieldName = 'SALARIO'
+      Origin = 'SALARIO'
+      Required = True
+      Precision = 18
+      Size = 2
     end
   end
   object DtsSalarios: TDataSource

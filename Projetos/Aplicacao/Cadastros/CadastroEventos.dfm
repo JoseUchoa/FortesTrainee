@@ -23,12 +23,10 @@ object FrmCadEventos: TFrmCadEventos
     Top = 8
     Width = 289
     Height = 261
-    ActivePage = TsLista
+    ActivePage = TsRegistro
     Anchors = [akLeft, akTop, akRight, akBottom]
     TabOrder = 0
     OnChange = PageControlChange
-    ExplicitWidth = 482
-    ExplicitHeight = 284
     object TsLista: TTabSheet
       Caption = 'Lista'
       DesignSize = (

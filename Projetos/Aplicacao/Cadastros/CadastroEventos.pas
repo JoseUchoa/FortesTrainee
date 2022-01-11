@@ -110,7 +110,11 @@ begin
     QueryEventosCODIGO.Value := 0;
 
   if QueryEventos.State in [dsInsert,dsEdit] then
+  begin
+    if EdtDesc.Text = '' then
+      raise Exception.Create('A descrição é obrigatória.');
     QueryEventos.Post;
+  end;
 
   QueryEventos.Refresh;
   PageControl.ActivePage := TsLista;
