@@ -2,8 +2,6 @@ unit Criptografia;
 
 interface
 
-function Criptografar(const Texto: string): string;
-
 implementation
 
 uses
