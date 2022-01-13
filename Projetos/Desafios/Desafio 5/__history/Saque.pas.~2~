@@ -24,7 +24,7 @@ begin
   begin
     while Valor >= I do
     begin
-      if (Valor - I = 1) or (Valor - I = 3) then
+      if (Valor div I = 1) and ((Valor mod I = 1) or (Valor mod I = 3)) then
         break;
       Valor := Valor - I;
       Result := Result + IntToStr(I) + ',';
